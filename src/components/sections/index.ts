@@ -1,0 +1,9 @@
+// Export all section components for easy importing
+export { default as Navbar } from './Navbar';
+export { default as HeroSection } from './HeroSection';
+export { default as LeadingInnovation } from './LeadingInnovation';
+export { default as HealthcareSolutions } from './HealthcareSolutions';
+export { default as FingertipsSection } from './FingertipsSection';
+export { default as TransformingHealthcare } from './TransformingHealthcare';
+export { default as PartnerExcellence } from './PartnerExcellence';
+export { default as Footer } from './Footer';
