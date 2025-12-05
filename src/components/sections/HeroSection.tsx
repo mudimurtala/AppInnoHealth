@@ -4,7 +4,7 @@ export default function HeroSection() {
       {/* Background image layer */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="https://plus.unsplash.com/premium_photo-1661690013376-9c1b73f0b16c?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTI1fHxtb2Rlcm4lMjBoZWFsdGhjYXJlJTIwdGVjaG5vbG9neSUyMG5pZ2VyaWFufGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600"
+          src="https://plus.unsplash.com/premium_photo-1726768994776-057d2b9e703e?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           alt="Modern healthcare technology Nigeria"
           className="w-full h-full object-cover"
           style={{ objectPosition: 'center' }}
@@ -14,7 +14,7 @@ export default function HeroSection() {
       {/* Blue gradient overlay with brand colors */}
       <div 
         className="absolute inset-0 z-10 bg-brand-gradient" 
-        style={{ opacity: 0.92 }} 
+        style={{ opacity: 0.82 }} 
       />
       
       {/* Decorative SVG overlay */}
@@ -26,17 +26,13 @@ export default function HeroSection() {
 
       {/* Hero Content */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 z-30">
-        <div className="text-center max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl mb-6">
-            InnoHealth Africa Technology
+        <div className="text-left max-w-4xl">
+          <h1 className="font-bold leading-none" style={{ fontSize: 'clamp(3.5rem, 3vw, 3rem)' }}>
+            <span className="block" style={{ color: '#00E5CC' }}>Protecting</span>
+            <span className="block" style={{ color: '#3C73FF' }}>Life</span>
+            <span className="text-white block">Through</span>
+            <span className="block" style={{ color: '#3C73FF' }}>Innovation</span>
           </h1>
-          <p className="text-xl md:text-2xl mb-8 opacity-95">
-            Innovating Healthcare Across Africa
-          </p>
-          <p className="text-lg opacity-90 max-w-3xl mx-auto">
-            Transforming healthcare delivery through innovative digital solutions, 
-            medical technology and comprehensive health information systems
-          </p>
         </div>
       </div>
 
@@ -45,7 +41,7 @@ export default function HeroSection() {
         <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
           <path 
             d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" 
-            fill="white"
+            fill="#3C73FF"
           />
         </svg>
       </div>
