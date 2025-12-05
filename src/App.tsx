@@ -2,7 +2,7 @@
 import { Menu, X, Activity, Users, Heart, TrendingUp, Smartphone, Calendar, FileText, MessageSquare, Shield, Database, ChartBar, UserCheck, ChevronDown, Mail, Phone, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { ImageWithFallback } from "./components/figma/ImageWithFallback";
+import { ImageWithFallback } from "./components/ui/image-with-fallback";
 import { Button } from "./components/ui/button";
 import {
   DropdownMenu,

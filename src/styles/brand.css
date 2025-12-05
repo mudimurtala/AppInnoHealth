@@ -1,0 +1,37 @@
+/* Logo text utility (ensures gradient + bold even if Tailwind utilities are limited) */
+.logo-text {
+  font-weight: 800; /* extra-bold */
+  font-size: var(--text-2xl);
+  line-height: var(--text-2xl--line-height);
+  letter-spacing: -0.02em;
+  background-image: linear-gradient(90deg, var(--color-purple-600), oklch(.72 .25 327) 50%, var(--color-pink-600));
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  /* subtle glow */
+  text-shadow: 0 1px 0 #ffffff20, 0 1px 8px color-mix(in oklab, var(--color-purple-700) 45%, transparent);
+}
+
+@media (width >= 48rem) {
+  .logo-text {
+    font-size: var(--text-3xl);
+    line-height: var(--text-3xl--line-height);
+  }
+}
+
+/* Stronger contrast variant for dark/blue backgrounds */
+.logo-text--on-dark {
+  /* slightly brighter gradient and a subtle outline for contrast */
+  background-image: linear-gradient(90deg, oklch(.67 .27 302) 0%, oklch(.72 .25 327) 45%, oklch(.7 .25 10) 100%);
+  /* text stroke fallback using shadow layers */
+  text-shadow:
+    0 0 0.5px #ffffffaa,
+    0 0 1.5px #ffffff66,
+    0 2px 10px color-mix(in oklab, var(--color-purple-700) 60%, transparent);
+}
+
+/* Slightly larger in footer context for presence */
+footer .logo-text {
+  font-size: var(--text-3xl);
+  line-height: var(--text-3xl--line-height);
+}
