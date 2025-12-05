@@ -1,0 +1,321 @@
+/* ================================
+   BRAND DESIGN SYSTEM - InnoHealth Africa Technology
+   Calm • Friendly • Trustworthy • Modern • Human-centered
+================================ */
+
+/* ================================
+   OFFICIAL BRAND COLOR PALETTE
+================================ */
+:root {
+  /* Primary Colors */
+  --inno-deep-core: #0B0F39;      /* Primary Deep - Main brand anchor */
+  --inno-steel-blue: #2A3558;     /* Steel - Secondary depth */
+  --inno-pulse-blue: #1D32F2;     /* Main Brand Blue - Primary action */
+  --inno-vivid-sky: #3C73FF;      /* Accent Sky - Highlights & CTAs */
+  --inno-care-blue: #B5CCFF;      /* Soft UI - Backgrounds & subtle elements */
+  
+  /* Semantic aliases for easier use */
+  --primary: var(--inno-pulse-blue);
+  --primary-dark: var(--inno-deep-core);
+  --primary-light: var(--inno-care-blue);
+  --secondary: var(--inno-steel-blue);
+  --accent: var(--inno-vivid-sky);
+  
+  /* Text colors */
+  --text-dark: var(--inno-deep-core);
+  --text-medium: var(--inno-steel-blue);
+  --text-light: #64748b;
+  --text-on-dark: #ffffff;
+  --text-on-primary: #ffffff;
+  
+  /* Background colors */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-subtle: var(--inno-care-blue);
+  --bg-dark: var(--inno-deep-core);
+  
+  /* Border colors */
+  --border-soft: #e2e8f0;
+  --border-medium: var(--inno-care-blue);
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(11, 15, 57, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(11, 15, 57, 0.1), 0 2px 4px -2px rgba(11, 15, 57, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(11, 15, 57, 0.1), 0 4px 6px -4px rgba(11, 15, 57, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(11, 15, 57, 0.1), 0 8px 10px -6px rgba(11, 15, 57, 0.1);
+}
+
+/* ================================
+   TYPOGRAPHY SYSTEM
+   Primary: Comfortaa (Logo, Hero, Big titles)
+   Secondary: Poppins (Body, Headings, UI)
+================================ */
+html {
+  font-family: "Poppins", system-ui, -apple-system, sans-serif;
+  color: var(--text-dark);
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* Brand font - Comfortaa for logo and hero elements */
+.font-brand {
+  font-family: "Comfortaa", cursive;
+  font-weight: 700;
+}
+
+/* Base font - Poppins for everything else */
+.font-base {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+
+/* Heading styles */
+h1, h2, h3 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  color: var(--text-dark);
+  line-height: 1.2;
+}
+
+h4, h5, h6 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+/* ================================
+   LOGO SYSTEM
+   Lowercase → accessibility & empathy
+   Rounded edges → people-centered innovation
+   Stable weight → trust & reliability
+================================ */
+.logo-text {
+  font-family: "Comfortaa", cursive;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--inno-pulse-blue);
+  letter-spacing: -0.01em;
+  text-transform: lowercase;
+}
+
+.logo-text--on-dark {
+  color: #ffffff;
+}
+
+.logotext {
+  font-family: "Comfortaa", cursive;
+  font-weight: 700;
+  color: var(--inno-pulse-blue);
+  letter-spacing: -0.01em;
+  text-transform: lowercase;
+}
+
+/* ================================
+   BUTTON SYSTEM
+   Buttons: rounded-xl (0.75rem)
+================================ */
+.btn-primary {
+  background-color: var(--inno-pulse-blue);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem; /* rounded-xl */
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: var(--inno-vivid-sky);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background-color: white;
+  color: var(--inno-pulse-blue);
+  border: 2px solid var(--inno-pulse-blue);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem; /* rounded-xl */
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background-color: var(--inno-pulse-blue);
+  color: white;
+}
+
+.btn-accent {
+  background-color: var(--inno-vivid-sky);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-accent:hover {
+  background-color: var(--inno-pulse-blue);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ================================
+   CARD SYSTEM
+   Cards: rounded-2xl (1rem)
+================================ */
+.card {
+  background-color: white;
+  border-radius: 1rem; /* rounded-2xl */
+  padding: 1.5rem; /* p-6 */
+  border: 1px solid var(--border-soft);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-lg);
+  border-color: var(--inno-care-blue);
+}
+
+.card-elevated {
+  background-color: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
+}
+
+.card-elevated:hover {
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-2px);
+}
+
+/* ================================
+   ICON CONTAINERS
+================================ */
+.icon-container {
+  width: 3rem;
+  height: 3rem;
+  background-color: var(--inno-care-blue);
+  border-radius: 0.5rem; /* rounded-lg */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-container--primary {
+  background-color: var(--inno-pulse-blue);
+  color: white;
+}
+
+.icon-container--accent {
+  background-color: var(--inno-vivid-sky);
+  color: white;
+}
+
+.icon-container--dark {
+  background-color: var(--inno-deep-core);
+  color: white;
+}
+
+.icon-container--steel {
+  background-color: var(--inno-steel-blue);
+  color: white;
+}
+
+/* ================================
+   INPUT SYSTEM
+   Inputs: rounded-lg (0.5rem)
+================================ */
+.input {
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem; /* rounded-lg */
+  border: 1px solid var(--border-soft);
+  font-family: "Poppins", sans-serif;
+  transition: all 0.2s ease;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--inno-pulse-blue);
+  box-shadow: 0 0 0 3px var(--inno-care-blue);
+}
+
+/* ================================
+   BADGE SYSTEM
+   Badges: rounded-full
+================================ */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px; /* rounded-full */
+  font-size: 0.75rem;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+}
+
+.badge--primary {
+  background-color: var(--inno-care-blue);
+  color: var(--inno-pulse-blue);
+}
+
+.badge--accent {
+  background-color: rgba(60, 115, 255, 0.1);
+  color: var(--inno-vivid-sky);
+}
+
+/* ================================
+   SECTION BACKGROUNDS
+================================ */
+.bg-brand-gradient {
+  background: linear-gradient(135deg, var(--inno-deep-core) 0%, var(--inno-steel-blue) 50%, var(--inno-pulse-blue) 100%);
+}
+
+.bg-brand-gradient-soft {
+  background: linear-gradient(135deg, var(--inno-pulse-blue) 0%, var(--inno-vivid-sky) 100%);
+}
+
+.bg-brand-subtle {
+  background-color: var(--inno-care-blue);
+}
+
+/* ================================
+   TEXT UTILITIES
+================================ */
+.text-brand {
+  color: var(--inno-pulse-blue);
+}
+
+.text-brand-dark {
+  color: var(--inno-deep-core);
+}
+
+.text-brand-accent {
+  color: var(--inno-vivid-sky);
+}
+
+.text-dark {
+  color: var(--text-dark);
+}
+
+.text-medium {
+  color: var(--text-medium);
+}
+
+.text-light {
+  color: var(--text-light);
+}

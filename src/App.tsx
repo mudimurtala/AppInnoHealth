@@ -23,22 +23,22 @@ export default function App() {
   return (
     <div className="w-full">
       {/* Navigation */}
-  <nav className="bg-white border-b border-gray-200">
+  <nav className="bg-[#FFF8E7] shadow-md border-b border-inno-care/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
-              <span className="logo-text">InnoHealth</span>
+              <img src="/logo.png" alt="InnoHealth Africa Technology" className="h-12 w-auto" />
             </div>
             
             <div className="hidden md:flex items-center space-x-8">
-              <a href="#" className="text-gray-700 hover:text-purple-700">Our Services</a>
-              <a href="#" className="text-gray-700 hover:text-purple-700">Telemedicine Services</a>
-              <a href="#" className="text-gray-700 hover:text-purple-700">Our Impact</a>
-              <a href="#" className="text-gray-700 hover:text-purple-700">Why Choose Us</a>
+              <a href="#" className="text-inno-deep hover:text-inno-pulse font-medium transition-colors">Our Services</a>
+              <a href="#" className="text-inno-deep hover:text-inno-pulse font-medium transition-colors">Telemedicine Services</a>
+              <a href="#" className="text-inno-deep hover:text-inno-pulse font-medium transition-colors">Our Impact</a>
+              <a href="#" className="text-inno-deep hover:text-inno-pulse font-medium transition-colors">Why Choose Us</a>
 
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button className="bg-purple-700 hover:bg-purple-800" style={{opacity: 0.85}}>
+                  <Button className="bg-inno-pulse hover:bg-inno-vivid rounded-xl">
                     Menu
                     <ChevronDown className="ml-2 h-4 w-4" />
                   </Button>
@@ -61,7 +61,7 @@ export default function App() {
             </div>
 
             <div className="md:hidden">
-              <button onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle menu">
+              <button onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle menu" className="text-inno-deep">
                 {isMenuOpen ? <X /> : <Menu />}
               </button>
             </div>
@@ -69,15 +69,15 @@ export default function App() {
 
 
           {isMenuOpen && (
-            <div className="md:hidden py-4 space-y-4">
-              <a href="#" className="block text-gray-700 hover:text-purple-700">Our Services</a>
-              <a href="#" className="block text-gray-700 hover:text-purple-700">Telemedicine Services</a>
-              <a href="#" className="block text-gray-700 hover:text-purple-700">Our Impact</a>
-              <a href="#" className="block text-gray-700 hover:text-purple-700">Why Choose Us</a>
+            <div className="md:hidden py-4 space-y-4 border-t border-inno-care/30">
+              <a href="#" className="block text-inno-deep hover:text-inno-pulse font-medium transition-colors">Our Services</a>
+              <a href="#" className="block text-inno-deep hover:text-inno-pulse font-medium transition-colors">Telemedicine Services</a>
+              <a href="#" className="block text-inno-deep hover:text-inno-pulse font-medium transition-colors">Our Impact</a>
+              <a href="#" className="block text-inno-deep hover:text-inno-pulse font-medium transition-colors">Why Choose Us</a>
               
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button className="bg-purple-700 hover:bg-purple-800 w-full">
+                  <Button className="bg-inno-pulse hover:bg-inno-vivid rounded-xl w-full">
                     Menu
                     <ChevronDown className="ml-2 h-4 w-4" />
                   </Button>
@@ -113,8 +113,8 @@ export default function App() {
             style={{objectPosition: 'center'}}
           />
         </div>
-        {/* Blue gradient overlay with reduced opacity */}
-        <div className="absolute inset-0 z-10" style={{background: 'linear-gradient(135deg, #7c3aedcc 0%, #6d28d9cc 50%, #4c1d95cc 100%)', opacity: 0.85}} />
+        {/* Blue gradient overlay with brand colors */}
+        <div className="absolute inset-0 z-10 bg-brand-gradient" style={{opacity: 0.92}} />
         {/* Decorative SVG overlay */}
         <div className="absolute inset-0 z-20 opacity-10">
           <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -179,13 +179,13 @@ export default function App() {
           <div className="grid md:grid-cols-3 gap-8">
             {/* Card 1 */}
             <motion.div
-              className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl hover:scale-105 border border-transparent hover:border-purple-300 transition-all duration-300 transform transition-transform"
+              className="bg-white p-8 rounded-2xl shadow-brand-md hover:shadow-brand-xl hover:scale-105 border border-transparent hover:border-inno-care transition-all duration-300 transform"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
             >
-              <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
-                <Activity className="w-6 h-6 text-purple-700" />
+              <div className="w-12 h-12 bg-inno-care rounded-lg flex items-center justify-center mb-4">
+                <Activity className="w-6 h-6 text-inno-pulse" />
               </div>
               <h3 className="mb-3">
                 Laboratory, Biomedical & Diagnostic Services
@@ -197,13 +197,13 @@ export default function App() {
 
             {/* Card 2 */}
             <motion.div
-              className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl hover:scale-105 border border-transparent hover:border-pink-300 transition-all duration-300 transform transition-transform"
+              className="bg-white p-8 rounded-2xl shadow-brand-md hover:shadow-brand-xl hover:scale-105 border border-transparent hover:border-inno-care transition-all duration-300 transform"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
             >
-              <div className="w-12 h-12 bg-pink-100 rounded-lg flex items-center justify-center mb-4">
-                <Heart className="w-6 h-6 text-pink-600" />
+              <div className="w-12 h-12 bg-inno-vivid/10 rounded-lg flex items-center justify-center mb-4">
+                <Heart className="w-6 h-6 text-inno-vivid" />
               </div>
               <h3 className="mb-3">
                 Healthcare Consultancy Services
@@ -215,13 +215,13 @@ export default function App() {
 
             {/* Card 3 */}
             <motion.div
-              className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl hover:scale-105 border border-transparent hover:border-purple-300 transition-all duration-300 transform transition-transform"
+              className="bg-white p-8 rounded-2xl shadow-brand-md hover:shadow-brand-xl hover:scale-105 border border-transparent hover:border-inno-care transition-all duration-300 transform"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
             >
-              <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
-                <Users className="w-6 h-6 text-purple-700" />
+              <div className="w-12 h-12 bg-inno-care rounded-lg flex items-center justify-center mb-4">
+                <Users className="w-6 h-6 text-inno-pulse" />
               </div>
               <h3 className="mb-3">
                 Customer Experience Services
@@ -233,13 +233,13 @@ export default function App() {
 
             {/* Card 4 */}
             <motion.div
-              className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl hover:scale-105 border border-transparent hover:border-pink-300 transition-all duration-300 transform transition-transform"
+              className="bg-white p-8 rounded-2xl shadow-brand-md hover:shadow-brand-xl hover:scale-105 border border-transparent hover:border-inno-care transition-all duration-300 transform"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
             >
-              <div className="w-12 h-12 bg-pink-100 rounded-lg flex items-center justify-center mb-4">
-                <Database className="w-6 h-6 text-pink-600" />
+              <div className="w-12 h-12 bg-inno-vivid/10 rounded-lg flex items-center justify-center mb-4">
+                <Database className="w-6 h-6 text-inno-vivid" />
               </div>
               <h3 className="mb-3">
                 Pharmaceutical Drugs & E-Pharmacy
@@ -251,13 +251,13 @@ export default function App() {
 
             {/* Card 5 */}
             <motion.div
-              className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl hover:scale-105 border border-transparent hover:border-purple-300 transition-all duration-300 transform transition-transform"
+              className="bg-white p-8 rounded-2xl shadow-brand-md hover:shadow-brand-xl hover:scale-105 border border-transparent hover:border-inno-care transition-all duration-300 transform"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
             >
-              <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
-                <Shield className="w-6 h-6 text-purple-700" />
+              <div className="w-12 h-12 bg-inno-care rounded-lg flex items-center justify-center mb-4">
+                <Shield className="w-6 h-6 text-inno-pulse" />
               </div>
               <h3 className="mb-3">
                 Telemedicine Services
@@ -269,13 +269,13 @@ export default function App() {
 
             {/* Card 6 */}
             <motion.div
-              className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl hover:scale-105 border border-transparent hover:border-pink-300 transition-all duration-300 transform transition-transform"
+              className="bg-white p-8 rounded-2xl shadow-brand-md hover:shadow-brand-xl hover:scale-105 border border-transparent hover:border-inno-care transition-all duration-300 transform"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
             >
-              <div className="w-12 h-12 bg-pink-100 rounded-lg flex items-center justify-center mb-4">
-                <TrendingUp className="w-6 h-6 text-pink-600" />
+              <div className="w-12 h-12 bg-inno-vivid/10 rounded-lg flex items-center justify-center mb-4">
+                <TrendingUp className="w-6 h-6 text-inno-vivid" />
               </div>
               <h3 className="mb-3">
                 High-Tech AI Healthcare Solutions
@@ -298,12 +298,12 @@ export default function App() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {/* Feature Cards with Framer Motion */}
             <motion.div
-              className="text-center bg-white rounded-lg shadow-md p-6 hover:shadow-xl hover:scale-105 border border-transparent hover:border-purple-300 transition-all duration-300 transform transition-transform"
+              className="text-center bg-white rounded-2xl shadow-brand-md p-6 hover:shadow-brand-xl hover:scale-105 border border-transparent hover:border-inno-care transition-all duration-300 transform"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
             >
-              <div className="w-16 h-16 bg-purple-700 rounded-lg flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-inno-pulse rounded-lg flex items-center justify-center mx-auto mb-4">
                 <Smartphone className="w-8 h-8 text-white" />
               </div>
               <h4 className="mb-2">Mobile Access</h4>
@@ -311,12 +311,12 @@ export default function App() {
             </motion.div>
 
             <motion.div
-              className="text-center bg-white rounded-lg shadow-md p-6 hover:shadow-xl hover:scale-105 border border-transparent hover:border-purple-300 transition-all duration-300 transform transition-transform"
+              className="text-center bg-white rounded-2xl shadow-brand-md p-6 hover:shadow-brand-xl hover:scale-105 border border-transparent hover:border-inno-care transition-all duration-300 transform"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
             >
-              <div className="w-16 h-16 bg-purple-700 rounded-lg flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-inno-vivid rounded-lg flex items-center justify-center mx-auto mb-4">
                 <Calendar className="w-8 h-8 text-white" />
               </div>
               <h4 className="mb-2">Easy Scheduling</h4>
@@ -324,12 +324,12 @@ export default function App() {
             </motion.div>
 
             <motion.div
-              className="text-center bg-white rounded-lg shadow-md p-6 hover:shadow-xl hover:scale-105 border border-transparent hover:border-purple-300 transition-all duration-300 transform transition-transform"
+              className="text-center bg-white rounded-2xl shadow-brand-md p-6 hover:shadow-brand-xl hover:scale-105 border border-transparent hover:border-inno-care transition-all duration-300 transform"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
             >
-              <div className="w-16 h-16 bg-purple-700 rounded-lg flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-inno-steel rounded-lg flex items-center justify-center mx-auto mb-4">
                 <FileText className="w-8 h-8 text-white" />
               </div>
               <h4 className="mb-2">Digital Records</h4>
@@ -337,12 +337,12 @@ export default function App() {
             </motion.div>
 
             <motion.div
-              className="text-center bg-white rounded-lg shadow-md p-6 hover:shadow-xl hover:scale-105 border border-transparent hover:border-purple-300 transition-all duration-300 transform transition-transform"
+              className="text-center bg-white rounded-2xl shadow-brand-md p-6 hover:shadow-brand-xl hover:scale-105 border border-transparent hover:border-inno-care transition-all duration-300 transform"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
             >
-              <div className="w-16 h-16 bg-purple-700 rounded-lg flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-inno-deep rounded-lg flex items-center justify-center mx-auto mb-4">
                 <MessageSquare className="w-8 h-8 text-white" />
               </div>
               <h4 className="mb-2">24/7 Support</h4>
@@ -367,48 +367,48 @@ export default function App() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
             {/* Service Cards with Framer Motion */}
             <motion.div
-              className="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-xl hover:scale-105 border border-transparent hover:border-purple-300 transition-all duration-300 transform transition-transform"
+              className="bg-white p-6 rounded-2xl shadow-brand-md text-center hover:shadow-brand-xl hover:scale-105 border border-transparent hover:border-inno-care transition-all duration-300 transform"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
             >
-              <div className="w-12 h-12 bg-purple-700 rounded-lg flex items-center justify-center mx-auto mb-3">
+              <div className="w-12 h-12 bg-inno-pulse rounded-lg flex items-center justify-center mx-auto mb-3">
                 <Heart className="w-6 h-6 text-white" />
               </div>
               <p className="text-sm">Primary Care</p>
             </motion.div>
 
             <motion.div
-              className="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-xl hover:scale-105 border border-transparent hover:border-purple-300 transition-all duration-300 transform transition-transform"
+              className="bg-white p-6 rounded-2xl shadow-brand-md text-center hover:shadow-brand-xl hover:scale-105 border border-transparent hover:border-inno-care transition-all duration-300 transform"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
             >
-              <div className="w-12 h-12 bg-gray-700 rounded-lg flex items-center justify-center mx-auto mb-3">
+              <div className="w-12 h-12 bg-inno-vivid rounded-lg flex items-center justify-center mx-auto mb-3">
                 <Activity className="w-6 h-6 text-white" />
               </div>
               <p className="text-sm">Specialized Care</p>
             </motion.div>
 
             <motion.div
-              className="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-xl hover:scale-105 border border-transparent hover:border-purple-300 transition-all duration-300 transform transition-transform"
+              className="bg-white p-6 rounded-2xl shadow-brand-md text-center hover:shadow-brand-xl hover:scale-105 border border-transparent hover:border-inno-care transition-all duration-300 transform"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
             >
-              <div className="w-12 h-12 bg-gray-500 rounded-lg flex items-center justify-center mx-auto mb-3">
+              <div className="w-12 h-12 bg-inno-steel rounded-lg flex items-center justify-center mx-auto mb-3">
                 <Database className="w-6 h-6 text-white" />
               </div>
               <p className="text-sm">Health Informatics</p>
             </motion.div>
 
             <motion.div
-              className="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-xl hover:scale-105 border border-transparent hover:border-purple-300 transition-all duration-300 transform transition-transform"
+              className="bg-white p-6 rounded-2xl shadow-brand-md text-center hover:shadow-brand-xl hover:scale-105 border border-transparent hover:border-inno-care transition-all duration-300 transform"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
             >
-              <div className="w-12 h-12 bg-purple-700 rounded-lg flex items-center justify-center mx-auto mb-3">
+              <div className="w-12 h-12 bg-inno-deep rounded-lg flex items-center justify-center mx-auto mb-3">
                 <ChartBar className="w-6 h-6 text-white" />
               </div>
               <p className="text-sm">Analytics & Insights</p>
@@ -458,7 +458,7 @@ export default function App() {
             ].map((card, idx) => (
               <motion.div
                 key={idx}
-                className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl hover:scale-105 border border-transparent hover:border-purple-300 transition-all duration-300 transform transition-transform"
+                className="bg-white rounded-2xl shadow-brand-md overflow-hidden hover:shadow-brand-xl hover:scale-105 border border-transparent hover:border-inno-care transition-all duration-300 transform"
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
@@ -470,7 +470,7 @@ export default function App() {
                 />
                 <div className="p-6">
                   <h4 className="mb-2">{card.title}</h4>
-                  <p className="text-sm text-gray-600">{card.desc}</p>
+                  <p className="text-sm text-text-light">{card.desc}</p>
                 </div>
               </motion.div>
             ))}
@@ -488,62 +488,62 @@ export default function App() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
               <div className="flex gap-4">
-                <div className="w-12 h-12 bg-purple-700 rounded-lg flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-inno-pulse rounded-lg flex items-center justify-center flex-shrink-0">
                   <Heart className="w-6 h-6 text-white" />
                 </div>
                 <div>
                   <h4 className="mb-2">Innovation-Driven</h4>
-                  <p className="text-sm text-gray-600">Pioneering next-generation healthcare technologies tailored for African markets.</p>
+                  <p className="text-sm text-text-light">Pioneering next-generation healthcare technologies tailored for African markets.</p>
                 </div>
               </div>
 
               <div className="flex gap-4">
-                <div className="w-12 h-12 bg-gray-700 rounded-lg flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-inno-vivid rounded-lg flex items-center justify-center flex-shrink-0">
                   <ChartBar className="w-6 h-6 text-white" />
                 </div>
                 <div>
                   <h4 className="mb-2">Uncompromising Quality</h4>
-                  <p className="text-sm text-gray-600">International standards with rigorous quality control and certification</p>
+                  <p className="text-sm text-text-light">International standards with rigorous quality control and certification</p>
                 </div>
               </div>
 
               <div className="flex gap-4">
-                <div className="w-12 h-12 bg-gray-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-inno-steel rounded-lg flex items-center justify-center flex-shrink-0">
                   <Shield className="w-6 h-6 text-white" />
                 </div>
                 <div>
                   <h4 className="mb-2">Reliable & Trusted</h4>
-                  <p className="text-sm text-gray-600">Dependable solutions backed by comprehensive support and maintenance</p>
+                  <p className="text-sm text-text-light">Dependable solutions backed by comprehensive support and maintenance</p>
                 </div>
               </div>
 
               <div className="flex gap-4">
-                <div className="w-12 h-12 bg-purple-700 rounded-lg flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-inno-pulse rounded-lg flex items-center justify-center flex-shrink-0">
                   <UserCheck className="w-6 h-6 text-white" />
                 </div>
                 <div>
                   <h4 className="mb-2">Local Expertise</h4>
-                  <p className="text-sm text-gray-600">Deep understanding of African healthcare challenges and requirements</p>
+                  <p className="text-sm text-text-light">Deep understanding of African healthcare challenges and requirements</p>
                 </div>
               </div>
 
               <div className="flex gap-4">
-                <div className="w-12 h-12 bg-purple-700 rounded-lg flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-inno-deep rounded-lg flex items-center justify-center flex-shrink-0">
                   <TrendingUp className="w-6 h-6 text-white" />
                 </div>
                 <div>
                   <h4 className="mb-2">Measurable Impact</h4>
-                  <p className="text-sm text-gray-600">Proven track record of improving healthcare outcomes across the continent</p>
+                  <p className="text-sm text-text-light">Proven track record of improving healthcare outcomes across the continent</p>
                 </div>
               </div>
 
               <div className="flex gap-4">
-                <div className="w-12 h-12 bg-gray-700 rounded-lg flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-inno-vivid rounded-lg flex items-center justify-center flex-shrink-0">
                   <Activity className="w-6 h-6 text-white" />
                 </div>
                 <div>
                   <h4 className="mb-2">Rapid Deployment</h4>
-                  <p className="text-sm text-gray-600">Efficient implementation processes minimizing downtime and disruption</p>
+                  <p className="text-sm text-text-light">Efficient implementation processes minimizing downtime and disruption</p>
                 </div>
               </div>
             </div>
@@ -560,11 +560,11 @@ export default function App() {
       </section>
 
       {/* Footer */}
-  <footer className="bg-gradient-to-br from-purple-700 via-purple-600 to-purple-800 text-white dark:bg-gray-950 dark:text-gray-100 py-12">
+  <footer className="bg-brand-gradient text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Footer brand */}
           <div className="mb-6">
-            <span className="logo-text logo-text--on-dark dark:text-purple-200">InnoHealth</span>
+            <img src="/logo.png" alt="InnoHealth Africa Technology" className="h-10 w-auto brightness-0 invert" />
           </div>
 
           <div className="grid md:grid-cols-4 gap-8 mb-8">
@@ -592,15 +592,15 @@ export default function App() {
               <h4 className="mb-4">Contact Us</h4>
               <ul className="space-y-2 text-sm opacity-90">
                 <li className="flex items-center gap-2">
-                  <Mail className="w-4 h-4 text-purple-200" />
+                  <Mail className="w-4 h-4 text-inno-care" />
                   <a href="mailto:info@innohealthafrica.com" className="hover:underline">info@innohealthafrica.com</a>
                 </li>
                 <li className="flex items-center gap-2">
-                  <Phone className="w-4 h-4 text-purple-200" />
+                  <Phone className="w-4 h-4 text-inno-care" />
                   <a href="tel:+2348042849572" className="hover:underline">+234 804 284 9572</a>
                 </li>
                 <li className="flex items-center gap-2">
-                  <MapPin className="w-4 h-4 text-purple-200" />
+                  <MapPin className="w-4 h-4 text-inno-care" />
                   <span>Kaduna & Katsina States, Nigeria</span>
                 </li>
               </ul>
@@ -612,17 +612,17 @@ export default function App() {
                 Stay updated with our latest innovations and healthcare insights.
               </p>
               <div className="flex gap-4">
-                <a href="#" className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center hover:bg-white/30 transition">
+                <a href="#" className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center hover:bg-white/30 transition">
                   <span className="sr-only">Facebook</span>
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                 </a>
-                <a href="#" className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center hover:bg-white/30 transition">
+                <a href="#" className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center hover:bg-white/30 transition">
                   <span className="sr-only">X</span>
                   <svg className="w-5 h-5" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor">
                     <path d="M18.244 2.25h3.194l-7.007 8.01 8.213 11.49H18.59l-5.21-7.28-6.1 7.28H3.999l7.489-8.93L3 2.25h5.817l4.708 6.844 4.719-6.844z"/>
                   </svg>
                 </a>
-                <a href="#" className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center hover:bg-white/30 transition">
+                <a href="#" className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center hover:bg-white/30 transition">
                   <span className="sr-only">LinkedIn</span>
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                 </a>
