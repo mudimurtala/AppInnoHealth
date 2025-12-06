@@ -56,14 +56,6 @@ export default function ImpactFocus() {
     return () => scrollContainer.removeEventListener('scroll', handleScroll);
   }, [isMobile]);
 
-  // Hide swipe hint after 3 seconds
-  useEffect(() => {
-    if (isMobile && showSwipeHint) {
-      const timer = setTimeout(() => setShowSwipeHint(false), 4000);
-      return () => clearTimeout(timer);
-    }
-  }, [isMobile, showSwipeHint]);
-
   // Auto-scroll animation
   useEffect(() => {
     const scrollContainer = scrollRef.current;
@@ -117,7 +109,15 @@ export default function ImpactFocus() {
         </div>
 
         {/* Horizontal Scrolling Impact Badges */}
-        <div style={{ position: 'relative' }}>
+        <div style={{ 
+          position: 'relative',
+          background: 'rgba(255, 255, 255, 0.4)',
+          backdropFilter: 'blur(8px)',
+          WebkitBackdropFilter: 'blur(8px)',
+          borderRadius: '30px',
+          padding: isMobile ? '16px' : '20px',
+          border: '1px solid rgba(181, 204, 255, 0.3)'
+        }}>
           {/* Swipe hint overlay for mobile */}
           {isMobile && showSwipeHint && (
             <div style={{
@@ -151,11 +151,12 @@ export default function ImpactFocus() {
               position: 'absolute',
               top: 0,
               right: 0,
-              bottom: '8px',
+              bottom: 0,
               width: '60px',
-              background: 'linear-gradient(to right, transparent, rgba(232, 240, 255, 0.9))',
+              background: 'linear-gradient(to right, transparent, rgba(255, 255, 255, 0.8))',
               pointerEvents: 'none',
-              zIndex: 5
+              zIndex: 5,
+              borderRadius: '0 30px 30px 0'
             }} />
           )}
 
