@@ -5,5 +5,5 @@ export { default as OurServices } from './OurServices';
 export { default as HowWeWork } from './HowWeWork';
 export { default as ImpactFocus } from './ImpactFocus';
 export { default as GovernanceAccountability } from './GovernanceAccountability';
-export { default as PartnerExcellence } from './PartnerExcellence';
+export { default as Partnerships } from './Partnerships';
 export { default as Footer } from './Footer';

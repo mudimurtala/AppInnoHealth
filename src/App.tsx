@@ -8,7 +8,7 @@ import {
   HowWeWork,
   ImpactFocus,
   GovernanceAccountability,
-  PartnerExcellence,
+  Partnerships,
   Footer
 } from "./components/sections";
 
@@ -33,8 +33,8 @@ export default function App() {
       {/* Governance & Accountability */}
       <GovernanceAccountability />
 
-      {/* Your Partner in Healthcare Excellence - Why choose us */}
-      <PartnerExcellence />
+      {/* Partnerships - Our collaborators */}
+      <Partnerships />
 
       {/* Footer - Contact and links */}
       <Footer />
