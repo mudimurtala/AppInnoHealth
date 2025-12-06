@@ -4,10 +4,10 @@ export default function HeroSection() {
       {/* Background image layer */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="https://plus.unsplash.com/premium_photo-1726768994776-057d2b9e703e?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt="Modern healthcare technology Nigeria"
+          src="/mother.png"
+          alt="African mother with baby receiving healthcare"
           className="w-full h-full object-cover"
-          style={{ objectPosition: 'center' }}
+          style={{ objectPosition: 'right center' }}
         />
       </div>
       
