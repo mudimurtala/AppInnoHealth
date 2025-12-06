@@ -163,7 +163,8 @@ export default function OurServices() {
           <h2 style={{ 
             fontSize: isMobile ? '28px' : '36px', 
             fontWeight: 'bold', 
-            color: '#0B0F39'
+            color: '#0B0F39',
+            fontFamily: 'Comfortaa, cursive'
           }}>
             Our Services
           </h2>
@@ -253,7 +254,8 @@ export default function OurServices() {
                       color: '#00E5CC',
                       marginBottom: '10px',
                       lineHeight: '1.3',
-                      flexShrink: 0
+                      flexShrink: 0,
+                      fontFamily: 'Comfortaa, cursive'
                     }}>
                       {service.title}
                     </h3>
@@ -265,7 +267,8 @@ export default function OurServices() {
                       display: showFull ? 'block' : '-webkit-box',
                       WebkitLineClamp: showFull ? undefined : 3,
                       WebkitBoxOrient: 'vertical' as const,
-                      transition: 'all 0.3s ease-out'
+                      transition: 'all 0.3s ease-out',
+                      fontFamily: 'Comfortaa, cursive'
                     }}>
                       {service.description}
                     </p>
@@ -277,7 +280,8 @@ export default function OurServices() {
                         color: '#00E5CC',
                         marginTop: 'auto',
                         opacity: 0.8,
-                        fontStyle: 'italic'
+                        fontStyle: 'italic',
+                        fontFamily: 'Comfortaa, cursive'
                       }}>
                         {isMobile ? 'Tap to read more' : 'Hover to read more'}
                       </span>
@@ -375,7 +379,8 @@ export default function OurServices() {
           color: '#0B0F39', 
           fontSize: isMobile ? '14px' : '16px',
           fontWeight: '600',
-          padding: '0 16px'
+          padding: '0 16px',
+          fontFamily: 'Comfortaa, cursive'
         }}>
           {services[activeIndex].title}
         </p>
