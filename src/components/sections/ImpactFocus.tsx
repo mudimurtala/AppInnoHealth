@@ -83,10 +83,13 @@ export default function ImpactFocus() {
   }, [isMobile, isHovered]);
 
   return (
-    <section style={{ 
-      background: 'linear-gradient(135deg, #E8F0FF 0%, #F5F8FF 25%, #FFFFFF 50%, #FAFCFF 75%, #F0F6FF 100%)',
-      padding: isMobile ? '40px 0' : '50px 0'
-    }}>
+    <section 
+      id="impact-focus"
+      style={{ 
+        background: 'linear-gradient(135deg, #E8F0FF 0%, #F5F8FF 25%, #FFFFFF 50%, #FAFCFF 75%, #F0F6FF 100%)',
+        padding: isMobile ? '40px 0' : '50px 0'
+      }}
+    >
       <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px' }}>
         {/* Header */}
         <div style={{ textAlign: 'center', marginBottom: isMobile ? '24px' : '32px' }}>

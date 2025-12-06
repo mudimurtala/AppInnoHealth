@@ -65,6 +65,7 @@ export default function Partnerships() {
 
   return (
     <section 
+      id="partnerships"
       style={{ 
         background: 'linear-gradient(135deg, #E8F0FF 0%, #F5F8FF 25%, #FFFFFF 50%, #FAFCFF 75%, #F0F6FF 100%)',
         padding: isMobile ? '36px 0' : '70px 0'

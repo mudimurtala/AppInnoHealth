@@ -41,7 +41,7 @@ export default function HowWeWork() {
   }, []);
 
   return (
-    <section style={{ background: '#F8FAFF' }}>
+    <section id="how-we-work" style={{ background: '#F8FAFF' }}>
       {/* Section 1: Our Model - Premium Blue Background with Decorative Elements */}
       <div style={{ 
         position: 'relative',

@@ -11,6 +11,14 @@ import {
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    setIsMenuOpen(false);
+  };
+
   return (
     <nav className="bg-brand-gradient shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -26,18 +34,30 @@ export default function Navbar() {
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#" className="text-white hover:text-inno-care text-sm font-medium transition-colors">
+            <button 
+              onClick={() => scrollToSection('our-services')} 
+              className="text-white hover:text-inno-care text-sm font-medium transition-colors bg-transparent border-none cursor-pointer"
+            >
               Our Services
-            </a>
-            <a href="#" className="text-white hover:text-inno-care text-sm font-medium transition-colors">
-              Telemedicine Services
-            </a>
-            <a href="#" className="text-white hover:text-inno-care text-sm font-medium transition-colors">
-              Our Impact
-            </a>
-            <a href="#" className="text-white hover:text-inno-care text-sm font-medium transition-colors">
-              Why Choose Us
-            </a>
+            </button>
+            <button 
+              onClick={() => scrollToSection('how-we-work')} 
+              className="text-white hover:text-inno-care text-sm font-medium transition-colors bg-transparent border-none cursor-pointer"
+            >
+              How We Work
+            </button>
+            <button 
+              onClick={() => scrollToSection('impact-focus')} 
+              className="text-white hover:text-inno-care text-sm font-medium transition-colors bg-transparent border-none cursor-pointer"
+            >
+              Impact Focus
+            </button>
+            <button 
+              onClick={() => scrollToSection('partnerships')} 
+              className="text-white hover:text-inno-care text-sm font-medium transition-colors bg-transparent border-none cursor-pointer"
+            >
+              Partnerships
+            </button>
 
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
@@ -125,18 +145,30 @@ export default function Navbar() {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="md:hidden py-4 space-y-4 border-t border-white/20">
-            <a href="#" className="block text-white/90 hover:text-white font-medium transition-colors">
+            <button 
+              onClick={() => scrollToSection('our-services')} 
+              className="block w-full text-left text-white hover:text-inno-care font-medium transition-colors bg-transparent border-none cursor-pointer"
+            >
               Our Services
-            </a>
-            <a href="#" className="block text-white/90 hover:text-white font-medium transition-colors">
-              Telemedicine Services
-            </a>
-            <a href="#" className="block text-white/90 hover:text-white font-medium transition-colors">
-              Our Impact
-            </a>
-            <a href="#" className="block text-white/90 hover:text-white font-medium transition-colors">
-              Why Choose Us
-            </a>
+            </button>
+            <button 
+              onClick={() => scrollToSection('how-we-work')} 
+              className="block w-full text-left text-white hover:text-inno-care font-medium transition-colors bg-transparent border-none cursor-pointer"
+            >
+              How We Work
+            </button>
+            <button 
+              onClick={() => scrollToSection('impact-focus')} 
+              className="block w-full text-left text-white hover:text-inno-care font-medium transition-colors bg-transparent border-none cursor-pointer"
+            >
+              Impact Focus
+            </button>
+            <button 
+              onClick={() => scrollToSection('partnerships')} 
+              className="block w-full text-left text-white hover:text-inno-care font-medium transition-colors bg-transparent border-none cursor-pointer"
+            >
+              Partnerships
+            </button>
             
             <DropdownMenu>
               <DropdownMenuTrigger asChild>

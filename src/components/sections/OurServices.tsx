@@ -151,6 +151,7 @@ export default function OurServices() {
 
   return (
     <section 
+      id="our-services"
       style={{
         padding: isMobile ? '30px 0 20px' : '40px 0 30px',
         background: 'linear-gradient(135deg, #E8F0FF 0%, #F5F8FF 25%, #FFFFFF 50%, #FAFCFF 75%, #F0F6FF 100%)',
