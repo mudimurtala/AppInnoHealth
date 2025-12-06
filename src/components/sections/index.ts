@@ -2,7 +2,7 @@
 export { default as Navbar } from './Navbar';
 export { default as HeroSection } from './HeroSection';
 export { default as OurServices } from './OurServices';
-export { default as HealthcareSolutions } from './HealthcareSolutions';
+export { default as HowWeWork } from './HowWeWork';
 export { default as FingertipsSection } from './FingertipsSection';
 export { default as TransformingHealthcare } from './TransformingHealthcare';
 export { default as PartnerExcellence } from './PartnerExcellence';

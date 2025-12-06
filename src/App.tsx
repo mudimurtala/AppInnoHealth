@@ -5,7 +5,7 @@ import {
   Navbar,
   HeroSection,
   OurServices,
-  HealthcareSolutions,
+  HowWeWork,
   FingertipsSection,
   TransformingHealthcare,
   PartnerExcellence,
@@ -24,8 +24,8 @@ export default function App() {
       {/* Our Services - Service cards carousel */}
       <OurServices />
 
-      {/* Comprehensive Healthcare Solutions - Service cards */}
-      <HealthcareSolutions />
+      {/* How We Work - Hybrid model and governance */}
+      <HowWeWork />
 
       {/* Healthcare at Your Fingertips - Features */}
       <FingertipsSection />
