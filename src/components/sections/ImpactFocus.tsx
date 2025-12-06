@@ -1,20 +1,32 @@
 import { useState, useEffect, useRef } from "react";
-import { HeartPulse } from "lucide-react";
+import { 
+  Baby, 
+  Heart, 
+  GraduationCap, 
+  Video, 
+  ClipboardList, 
+  Building2,
+  ChevronLeft,
+  ChevronRight,
+  LucideIcon
+} from "lucide-react";
 
-// Impact items data
-const impactItems = [
-  "Reduce maternal deaths",
-  "Improve childhood survival and nutrition",
-  "Strengthen health worker capacity at scale",
-  "Expand equitable access to telemedicine",
-  "Drive evidence-based public health planning",
-  "Strengthen community health systems sustainably"
+// Impact items data with their specific icons
+const impactItems: { text: string; icon: LucideIcon }[] = [
+  { text: "Reduce maternal deaths", icon: Heart },
+  { text: "Improve childhood survival and nutrition", icon: Baby },
+  { text: "Strengthen health worker capacity at scale", icon: GraduationCap },
+  { text: "Expand equitable access to telemedicine", icon: Video },
+  { text: "Drive evidence-based public health planning", icon: ClipboardList },
+  { text: "Strengthen community health systems sustainably", icon: Building2 }
 ];
 
 export default function ImpactFocus() {
   const [isMobile, setIsMobile] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
   const [isHovered, setIsHovered] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [showSwipeHint, setShowSwipeHint] = useState(true);
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
@@ -22,6 +34,35 @@ export default function ImpactFocus() {
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
+
+  // Track scroll position for mobile indicator dots
+  useEffect(() => {
+    const scrollContainer = scrollRef.current;
+    if (!scrollContainer || !isMobile) return;
+
+    const handleScroll = () => {
+      const scrollLeft = scrollContainer.scrollLeft;
+      const itemWidth = scrollContainer.scrollWidth / impactItems.length;
+      const newIndex = Math.round(scrollLeft / itemWidth);
+      setActiveIndex(Math.min(newIndex, impactItems.length - 1));
+      
+      // Hide swipe hint once user starts scrolling
+      if (scrollLeft > 10) {
+        setShowSwipeHint(false);
+      }
+    };
+
+    scrollContainer.addEventListener('scroll', handleScroll);
+    return () => scrollContainer.removeEventListener('scroll', handleScroll);
+  }, [isMobile]);
+
+  // Hide swipe hint after 3 seconds
+  useEffect(() => {
+    if (isMobile && showSwipeHint) {
+      const timer = setTimeout(() => setShowSwipeHint(false), 4000);
+      return () => clearTimeout(timer);
+    }
+  }, [isMobile, showSwipeHint]);
 
   // Auto-scroll animation
   useEffect(() => {
@@ -76,22 +117,68 @@ export default function ImpactFocus() {
         </div>
 
         {/* Horizontal Scrolling Impact Badges */}
-        <div 
-          ref={scrollRef}
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-          style={{
-            display: 'flex',
-            gap: '16px',
-            overflowX: isMobile ? 'auto' : 'hidden',
-            paddingBottom: '8px',
-            scrollbarWidth: 'none',
-            msOverflowStyle: 'none',
-            WebkitOverflowScrolling: 'touch'
-          }}
-        >
-          {/* Duplicate items for infinite scroll effect on desktop */}
-          {[...impactItems, ...impactItems].map((item, index) => (
+        <div style={{ position: 'relative' }}>
+          {/* Swipe hint overlay for mobile */}
+          {isMobile && showSwipeHint && (
+            <div style={{
+              position: 'absolute',
+              top: '50%',
+              right: '16px',
+              transform: 'translateY(-50%)',
+              zIndex: 10,
+              display: 'flex',
+              alignItems: 'center',
+              gap: '4px',
+              background: 'rgba(11, 15, 57, 0.85)',
+              padding: '8px 12px',
+              borderRadius: '20px',
+              animation: 'swipeHint 1.5s ease-in-out infinite',
+              boxShadow: '0 4px 15px rgba(11, 15, 57, 0.3)'
+            }}>
+              <span style={{
+                color: 'white',
+                fontSize: '12px',
+                fontFamily: "'Inter', sans-serif",
+                fontWeight: 500
+              }}>Swipe</span>
+              <ChevronRight size={16} color="#00E5CC" />
+            </div>
+          )}
+
+          {/* Right fade gradient to indicate more content */}
+          {isMobile && (
+            <div style={{
+              position: 'absolute',
+              top: 0,
+              right: 0,
+              bottom: '8px',
+              width: '60px',
+              background: 'linear-gradient(to right, transparent, rgba(232, 240, 255, 0.9))',
+              pointerEvents: 'none',
+              zIndex: 5
+            }} />
+          )}
+
+          <div 
+            ref={scrollRef}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            style={{
+              display: 'flex',
+              gap: '16px',
+              overflowX: isMobile ? 'auto' : 'hidden',
+              paddingBottom: '8px',
+              paddingRight: isMobile ? '50px' : '0',
+              scrollbarWidth: 'none',
+              msOverflowStyle: 'none',
+              WebkitOverflowScrolling: 'touch',
+              scrollSnapType: isMobile ? 'x mandatory' : 'none'
+            }}
+          >
+          {/* Duplicate items for infinite scroll effect on desktop, single set for mobile */}
+          {(isMobile ? impactItems : [...impactItems, ...impactItems]).map((item, index) => {
+            const IconComponent = item.icon;
+            return (
             <div
               key={index}
               style={{
@@ -105,7 +192,8 @@ export default function ImpactFocus() {
                 border: '1px solid rgba(181, 204, 255, 0.3)',
                 whiteSpace: 'nowrap',
                 flexShrink: 0,
-                transition: 'all 0.3s ease'
+                transition: 'all 0.3s ease',
+                scrollSnapAlign: isMobile ? 'start' : 'none'
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.boxShadow = '0 4px 20px rgba(0, 229, 204, 0.2)';
@@ -127,7 +215,7 @@ export default function ImpactFocus() {
                 flexShrink: 0,
                 boxShadow: '0 4px 12px rgba(60, 115, 255, 0.4)'
               }}>
-                <HeartPulse size={20} color="white" strokeWidth={2.5} />
+                <IconComponent size={20} color="white" strokeWidth={2.5} />
               </div>
               <span style={{
                 fontFamily: "'Inter', sans-serif",
@@ -135,16 +223,58 @@ export default function ImpactFocus() {
                 fontWeight: 500,
                 color: '#0B0F39'
               }}>
-                {item}
+                {item.text}
               </span>
             </div>
-          ))}
+          );
+          })}
+          </div>
+
+          {/* Mobile scroll indicator dots */}
+          {isMobile && (
+            <div style={{
+              display: 'flex',
+              justifyContent: 'center',
+              gap: '8px',
+              marginTop: '16px'
+            }}>
+              {impactItems.map((_, index) => (
+                <div
+                  key={index}
+                  style={{
+                    width: activeIndex === index ? '24px' : '8px',
+                    height: '8px',
+                    borderRadius: '4px',
+                    background: activeIndex === index 
+                      ? 'linear-gradient(135deg, #3C73FF 0%, #1D32F2 100%)' 
+                      : 'rgba(181, 204, 255, 0.5)',
+                    transition: 'all 0.3s ease',
+                    cursor: 'pointer'
+                  }}
+                  onClick={() => {
+                    const scrollContainer = scrollRef.current;
+                    if (scrollContainer) {
+                      const itemWidth = scrollContainer.scrollWidth / impactItems.length;
+                      scrollContainer.scrollTo({
+                        left: index * itemWidth,
+                        behavior: 'smooth'
+                      });
+                    }
+                  }}
+                />
+              ))}
+            </div>
+          )}
         </div>
 
         {/* Hide scrollbar with CSS */}
         <style>{`
           div::-webkit-scrollbar {
             display: none;
+          }
+          @keyframes swipeHint {
+            0%, 100% { transform: translateY(-50%) translateX(0); opacity: 1; }
+            50% { transform: translateY(-50%) translateX(-8px); opacity: 0.7; }
           }
         `}</style>
       </div>
