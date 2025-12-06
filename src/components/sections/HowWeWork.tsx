@@ -293,17 +293,18 @@ export default function HowWeWork() {
         </div>
       </div>
 
-      {/* Section 2: Our Standards - Dark Background */}
+      {/* Section 2: Our Standards - Dark Background (Hidden on Mobile) */}
+      {!isMobile && (
       <div style={{
         background: 'linear-gradient(135deg, #0B0F39 0%, #1a2156 50%, #2A3558 100%)',
-        padding: isMobile ? '32px 16px' : '40px 24px'
+        padding: '40px 24px'
       }}>
         <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
           {/* Section Header */}
-          <div style={{ textAlign: 'center', marginBottom: isMobile ? '18px' : '24px' }}>
+          <div style={{ textAlign: 'center', marginBottom: '24px' }}>
             <h3 style={{
               fontFamily: "'Poppins', sans-serif",
-              fontSize: isMobile ? '24px' : '30px',
+              fontSize: '30px',
               fontWeight: 600,
               color: 'white',
               marginBottom: '16px'
@@ -315,8 +316,8 @@ export default function HowWeWork() {
           {/* Trust Badges Grid */}
           <div style={{
             display: 'grid',
-            gridTemplateColumns: isMobile ? 'repeat(2, 1fr)' : 'repeat(4, 1fr)',
-            gap: isMobile ? '12px' : '16px'
+            gridTemplateColumns: 'repeat(4, 1fr)',
+            gap: '16px'
           }}>
             {trustBadges.map((badge, index) => {
               const IconComponent = badge.icon;
@@ -327,7 +328,7 @@ export default function HowWeWork() {
                     background: 'rgba(255, 255, 255, 0.05)',
                     backdropFilter: 'blur(10px)',
                     borderRadius: '12px',
-                    padding: isMobile ? '18px 12px' : '20px 16px',
+                    padding: '20px 16px',
                     textAlign: 'center',
                     border: '1px solid rgba(255, 255, 255, 0.1)',
                     transition: 'all 0.3s ease'
@@ -358,7 +359,7 @@ export default function HowWeWork() {
                   </div>
                   <h4 style={{
                     fontFamily: "'Poppins', sans-serif",
-                    fontSize: isMobile ? '13px' : '15px',
+                    fontSize: '15px',
                     fontWeight: 600,
                     color: '#00E5CC',
                     marginBottom: '4px'
@@ -367,7 +368,7 @@ export default function HowWeWork() {
                   </h4>
                   <p style={{
                     fontFamily: "'Inter', sans-serif",
-                    fontSize: isMobile ? '11px' : '13px',
+                    fontSize: '13px',
                     color: 'rgba(255, 255, 255, 0.7)',
                     lineHeight: 1.4
                   }}>
@@ -379,6 +380,7 @@ export default function HowWeWork() {
           </div>
         </div>
       </div>
+      )}
     </section>
   );
 }
