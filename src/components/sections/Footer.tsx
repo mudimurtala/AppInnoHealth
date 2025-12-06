@@ -196,6 +196,7 @@ const Footer: React.FC = () => {
               <img
                 src="/logo.png"
                 alt="InnoHealth Africa Technology"
+                loading="lazy"
                 style={{
                   height: '28px',
                   marginBottom: '4px',
@@ -554,6 +555,7 @@ const Footer: React.FC = () => {
           <img
             src="/logo.png"
             alt="InnoHealth Africa Technology"
+            loading="lazy"
             style={{
               height: '40px',
               marginBottom: '10px',

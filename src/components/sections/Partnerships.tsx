@@ -293,6 +293,7 @@ export default function Partnerships() {
                 <img 
                   src={partner.logo} 
                   alt={partner.name}
+                  loading="lazy"
                   style={{
                     maxWidth: '100%',
                     maxHeight: '100%',
