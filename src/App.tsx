@@ -6,7 +6,7 @@ import {
   HeroSection,
   OurServices,
   HowWeWork,
-  FingertipsSection,
+  ImpactFocus,
   TransformingHealthcare,
   PartnerExcellence,
   Footer
@@ -27,8 +27,8 @@ export default function App() {
       {/* How We Work - Hybrid model and governance */}
       <HowWeWork />
 
-      {/* Healthcare at Your Fingertips - Features */}
-      <FingertipsSection />
+      {/* Impact Focus - Our impact goals */}
+      <ImpactFocus />
 
       {/* Transforming Healthcare in Nigeria - Impact showcase */}
       <TransformingHealthcare />
