@@ -4,7 +4,7 @@
 import {
   Navbar,
   HeroSection,
-  LeadingInnovation,
+  OurServices,
   HealthcareSolutions,
   FingertipsSection,
   TransformingHealthcare,
@@ -21,8 +21,8 @@ export default function App() {
       {/* Hero Section - Main banner with company tagline */}
       <HeroSection />
 
-      {/* Leading Healthcare Innovation - About section */}
-      <LeadingInnovation />
+      {/* Our Services - Service cards carousel */}
+      <OurServices />
 
       {/* Comprehensive Healthcare Solutions - Service cards */}
       <HealthcareSolutions />
