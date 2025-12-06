@@ -7,7 +7,7 @@ import {
   OurServices,
   HowWeWork,
   ImpactFocus,
-  TransformingHealthcare,
+  GovernanceAccountability,
   PartnerExcellence,
   Footer
 } from "./components/sections";
@@ -30,8 +30,8 @@ export default function App() {
       {/* Impact Focus - Our impact goals */}
       <ImpactFocus />
 
-      {/* Transforming Healthcare in Nigeria - Impact showcase */}
-      <TransformingHealthcare />
+      {/* Governance & Accountability */}
+      <GovernanceAccountability />
 
       {/* Your Partner in Healthcare Excellence - Why choose us */}
       <PartnerExcellence />
