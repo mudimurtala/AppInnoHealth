@@ -49,7 +49,7 @@ export default function GovernanceAccountability() {
   return (
     <section 
       style={{ 
-        background: 'linear-gradient(135deg, #0a1628 0%, #0B0F39 20%, #122a4d 40%, #1D32F2 70%, #1a3a5c 85%, #3C73FF 100%)',
+        background: '#0B0F39',
         padding: isMobile ? '48px 0' : '60px 0',
         position: 'relative',
         overflow: 'hidden'
