@@ -1,12 +1,6 @@
 import { useState } from "react";
-import { Menu, X, ChevronDown, Calendar, Users, FileText } from "lucide-react";
-import { Button } from "../ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "../ui/dropdown-menu";
+import { Menu, X } from "lucide-react";
+import NavbarMenu from "./NavbarMenu";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,203 +14,189 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="bg-brand-gradient shadow-lg">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <div className="flex items-center">
-            <img 
-              src="/logo.png" 
-              alt="InnoHealth Africa Technology" 
-              className="h-12 w-auto brightness-0 invert" 
-            />
-          </div>
-          
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            <button 
-              onClick={() => scrollToSection('our-services')} 
-              className="text-white hover:text-inno-care text-sm font-medium transition-colors bg-transparent border-none cursor-pointer"
-            >
-              Our Services
-            </button>
-            <button 
-              onClick={() => scrollToSection('how-we-work')} 
-              className="text-white hover:text-inno-care text-sm font-medium transition-colors bg-transparent border-none cursor-pointer"
-            >
-              How We Work
-            </button>
-            <button 
-              onClick={() => scrollToSection('impact-focus')} 
-              className="text-white hover:text-inno-care text-sm font-medium transition-colors bg-transparent border-none cursor-pointer"
-            >
-              Impact Focus
-            </button>
-            <button 
-              onClick={() => scrollToSection('partnerships')} 
-              className="text-white hover:text-inno-care text-sm font-medium transition-colors bg-transparent border-none cursor-pointer"
-            >
-              Partnerships
-            </button>
-
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button 
-                  className="text-white font-medium px-5 py-2 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-                  style={{
-                    background: 'linear-gradient(135deg, #3C73FF 0%, #1D32F2 50%, #2A3558 100%)',
-                    borderRadius: '9999px'
-                  }}
-                >
-                  Menu
-                  <ChevronDown className="ml-0.5 h-4 w-4" />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent 
-                align="end" 
-                className="w-56 border-0 shadow-2xl"
-                style={{
-                  background: 'linear-gradient(135deg, #3C73FF 0%, #1D32F2 50%, #2A3558 100%)',
-                  borderRadius: '24px',
-                  padding: '16px',
-                  marginTop: '12px'
-                }}
+    <>
+      <nav className="bg-brand-gradient shadow-lg relative z-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            {/* Logo */}
+            <div className="flex items-center">
+              <img 
+                src="/logo.png" 
+                alt="InnoHealth Africa Technology" 
+                className="h-12 w-auto brightness-0 invert" 
+              />
+            </div>
+            
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center space-x-8">
+              <button 
+                onClick={() => scrollToSection('our-services')} 
+                className="text-white hover:text-inno-care text-sm font-medium transition-colors bg-transparent border-none cursor-pointer"
               >
-                <DropdownMenuItem 
-                  className="text-white cursor-pointer transition-all duration-200"
-                  style={{ 
-                    borderRadius: '16px',
-                    padding: '16px 20px',
-                    marginBottom: '8px'
-                  }}
-                  onFocus={(e) => e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.2)'}
-                  onBlur={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
-                  onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.2)'}
-                  onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
-                >
-                  <Calendar className="h-5 w-5 text-white" style={{ marginRight: '16px' }} />
-                  Book Appointment
-                </DropdownMenuItem>
-                <DropdownMenuItem 
-                  className="text-white cursor-pointer transition-all duration-200"
-                  style={{ 
-                    borderRadius: '16px',
-                    padding: '16px 20px',
-                    marginBottom: '8px'
-                  }}
-                  onFocus={(e) => e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.2)'}
-                  onBlur={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
-                  onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.2)'}
-                  onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
-                >
-                  <Users className="h-5 w-5 text-white" style={{ marginRight: '16px' }} />
-                  Our Team
-                </DropdownMenuItem>
-                <DropdownMenuItem 
-                  className="text-white cursor-pointer transition-all duration-200"
-                  style={{ 
-                    borderRadius: '16px',
-                    padding: '16px 20px'
-                  }}
-                  onFocus={(e) => e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.2)'}
-                  onBlur={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
-                  onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.2)'}
-                  onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
-                >
-                  <FileText className="h-5 w-5 text-white" style={{ marginRight: '16px' }} />
-                  About Us
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-          </div>
+                Our Services
+              </button>
+              <button 
+                onClick={() => scrollToSection('how-we-work')} 
+                className="text-white hover:text-inno-care text-sm font-medium transition-colors bg-transparent border-none cursor-pointer"
+              >
+                How We Work
+              </button>
+              <button 
+                onClick={() => scrollToSection('impact-focus')} 
+                className="text-white hover:text-inno-care text-sm font-medium transition-colors bg-transparent border-none cursor-pointer"
+              >
+                Impact Focus
+              </button>
+              <button 
+                onClick={() => scrollToSection('partnerships')} 
+                className="text-white hover:text-inno-care text-sm font-medium transition-colors bg-transparent border-none cursor-pointer"
+              >
+                Partnerships
+              </button>
 
-          {/* Mobile Menu Button */}
-          <div className="md:hidden">
-            <button 
-              onClick={() => setIsMenuOpen(!isMenuOpen)} 
-              aria-label="Toggle menu" 
-              className="text-white p-2"
-            >
-              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </button>
+              <NavbarMenu />
+            </div>
+
+            {/* Mobile Menu Button */}
+            <div className="md:hidden">
+              <button 
+                onClick={() => setIsMenuOpen(!isMenuOpen)} 
+                aria-label="Toggle menu" 
+                className="text-white p-2 relative z-50"
+              >
+                {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              </button>
+            </div>
           </div>
         </div>
+      </nav>
 
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="md:hidden py-4 space-y-4 border-t border-white/20">
-            <button 
-              onClick={() => scrollToSection('our-services')} 
-              className="block w-full text-left text-white hover:text-inno-care font-medium transition-colors bg-transparent border-none cursor-pointer"
-            >
-              Our Services
-            </button>
-            <button 
-              onClick={() => scrollToSection('how-we-work')} 
-              className="block w-full text-left text-white hover:text-inno-care font-medium transition-colors bg-transparent border-none cursor-pointer"
-            >
-              How We Work
-            </button>
-            <button 
-              onClick={() => scrollToSection('impact-focus')} 
-              className="block w-full text-left text-white hover:text-inno-care font-medium transition-colors bg-transparent border-none cursor-pointer"
-            >
-              Impact Focus
-            </button>
-            <button 
-              onClick={() => scrollToSection('partnerships')} 
-              className="block w-full text-left text-white hover:text-inno-care font-medium transition-colors bg-transparent border-none cursor-pointer"
-            >
-              Partnerships
-            </button>
-            
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button 
-                  className="text-white font-medium w-full px-5 py-2 shadow-lg hover:shadow-xl transition-all duration-300"
-                  style={{
-                    background: 'linear-gradient(135deg, #3C73FF 0%, #1D32F2 50%, #2A3558 100%)',
-                    borderRadius: '9999px'
-                  }}
-                >
-                  Menu
-                  <ChevronDown className="ml-0.5 h-4 w-4" />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent 
-                align="end" 
-                className="min-w-0 w-auto p-3 mt-3 border-0 shadow-2xl"
+      {/* Mobile Navigation Overlay */}
+      {isMenuOpen && (
+        <>
+          {/* Backdrop */}
+          <div 
+            className="md:hidden"
+            onClick={() => setIsMenuOpen(false)}
+            style={{ 
+              position: 'fixed',
+              top: '64px',
+              left: 0,
+              right: 0,
+              bottom: 0,
+              backgroundColor: 'rgba(0, 0, 0, 0.5)',
+              zIndex: 40
+            }}
+          />
+          
+          {/* Menu Panel */}
+          <div 
+            className="md:hidden"
+            style={{
+              position: 'fixed',
+              top: '80px',
+              right: '16px',
+              width: '220px',
+              zIndex: 45,
+              background: '#0B0F39',
+              borderRadius: '20px',
+              padding: '20px',
+              boxShadow: '0 0 0 2px rgba(255, 255, 255, 0.25), 0 25px 50px -12px rgba(0, 0, 0, 0.5)'
+            }}
+          >
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+              <button 
+                onClick={() => scrollToSection('our-services')} 
                 style={{
-                  background: 'linear-gradient(135deg, #3C73FF 0%, #1D32F2 50%, #2A3558 100%)',
-                  borderRadius: '20px'
+                  display: 'block',
+                  width: '100%',
+                  textAlign: 'left',
+                  color: 'white',
+                  fontWeight: 500,
+                  fontSize: '14px',
+                  background: 'transparent',
+                  border: 'none',
+                  cursor: 'pointer',
+                  padding: '12px 16px',
+                  borderRadius: '12px',
+                  transition: 'background-color 0.2s'
                 }}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.1)'}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
               >
-                <DropdownMenuItem 
-                  className="text-white text-sm hover:bg-white/20 px-4 py-3 cursor-pointer transition-all duration-200 focus:bg-white/20 mb-1"
-                  style={{ borderRadius: '12px' }}
-                >
-                  <Calendar className="mr-3 h-4 w-4 text-white/90" />
-                  Book Appointment
-                </DropdownMenuItem>
-                <DropdownMenuItem 
-                  className="text-white text-sm hover:bg-white/20 px-4 py-3 cursor-pointer transition-all duration-200 focus:bg-white/20 mb-1"
-                  style={{ borderRadius: '12px' }}
-                >
-                  <Users className="mr-3 h-4 w-4 text-white/90" />
-                  Our Team
-                </DropdownMenuItem>
-                <DropdownMenuItem 
-                  className="text-white text-sm hover:bg-white/20 px-4 py-3 cursor-pointer transition-all duration-200 focus:bg-white/20"
-                  style={{ borderRadius: '12px' }}
-                >
-                  <FileText className="mr-3 h-4 w-4 text-white/90" />
-                  About Us
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+                Our Services
+              </button>
+              <button 
+                onClick={() => scrollToSection('how-we-work')} 
+                style={{
+                  display: 'block',
+                  width: '100%',
+                  textAlign: 'left',
+                  color: 'white',
+                  fontWeight: 500,
+                  fontSize: '14px',
+                  background: 'transparent',
+                  border: 'none',
+                  cursor: 'pointer',
+                  padding: '12px 16px',
+                  borderRadius: '12px',
+                  transition: 'background-color 0.2s'
+                }}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.1)'}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
+              >
+                How We Work
+              </button>
+              <button 
+                onClick={() => scrollToSection('impact-focus')} 
+                style={{
+                  display: 'block',
+                  width: '100%',
+                  textAlign: 'left',
+                  color: 'white',
+                  fontWeight: 500,
+                  fontSize: '14px',
+                  background: 'transparent',
+                  border: 'none',
+                  cursor: 'pointer',
+                  padding: '12px 16px',
+                  borderRadius: '12px',
+                  transition: 'background-color 0.2s'
+                }}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.1)'}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
+              >
+                Impact Focus
+              </button>
+              <button 
+                onClick={() => scrollToSection('partnerships')} 
+                style={{
+                  display: 'block',
+                  width: '100%',
+                  textAlign: 'left',
+                  color: 'white',
+                  fontWeight: 500,
+                  fontSize: '14px',
+                  background: 'transparent',
+                  border: 'none',
+                  cursor: 'pointer',
+                  padding: '12px 16px',
+                  borderRadius: '12px',
+                  transition: 'background-color 0.2s'
+                }}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.1)'}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
+              >
+                Partnerships
+              </button>
+              
+              <div style={{ paddingTop: '8px', borderTop: '1px solid rgba(255,255,255,0.15)', marginTop: '8px' }}>
+                <NavbarMenu isMobile />
+              </div>
+            </div>
           </div>
-        )}
-      </div>
-    </nav>
+        </>
+      )}
+    </>
   );
 }
