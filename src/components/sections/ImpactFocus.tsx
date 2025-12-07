@@ -212,12 +212,12 @@ export default function ImpactFocus() {
                 width: '38px',
                 height: '38px',
                 borderRadius: '50%',
-                background: 'linear-gradient(135deg, #3C73FF 0%, #1D32F2 100%)',
+                background: '#0B0F39',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 flexShrink: 0,
-                boxShadow: '0 4px 12px rgba(60, 115, 255, 0.4)'
+                boxShadow: '0 4px 12px rgba(11, 15, 57, 0.4)'
               }}>
                 <IconComponent size={20} color="white" strokeWidth={2.5} />
               </div>
@@ -250,7 +250,7 @@ export default function ImpactFocus() {
                     height: '8px',
                     borderRadius: '4px',
                     background: activeIndex === index 
-                      ? 'linear-gradient(135deg, #3C73FF 0%, #1D32F2 100%)' 
+                      ? 'linear-gradient(135deg, #0B0F39 0%, #0B0F39 100%)' 
                       : 'rgba(181, 204, 255, 0.5)',
                     transition: 'all 0.3s ease',
                     cursor: 'pointer'
