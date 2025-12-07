@@ -121,11 +121,11 @@ export default function Partnerships() {
                   width: isMobile ? '28px' : '56px',
                   height: isMobile ? '28px' : '56px',
                   borderRadius: '50%',
-                  background: 'linear-gradient(135deg, #3C73FF 0%, #1D32F2 100%)',
+                  background: '#0B0F39',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  boxShadow: isMobile ? '0 2px 8px rgba(60, 115, 255, 0.3)' : '0 6px 20px rgba(60, 115, 255, 0.35)'
+                  boxShadow: isMobile ? '0 2px 8px rgba(11, 15, 57, 0.3)' : '0 6px 20px rgba(11, 15, 57, 0.35)'
                 }}>
                   <IconComponent size={isMobile ? 14 : 28} color="white" strokeWidth={2.5} />
                 </div>
@@ -193,13 +193,13 @@ export default function Partnerships() {
                 width: isMobile ? '28px' : '50px',
                 height: isMobile ? '28px' : '50px',
                 borderRadius: '50%',
-                background: 'linear-gradient(135deg, #3C73FF 0%, #1D32F2 100%)',
+                background: '#0B0F39',
                 border: 'none',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 cursor: 'pointer',
-                boxShadow: '0 4px 15px rgba(60, 115, 255, 0.4)',
+                boxShadow: '0 4px 15px rgba(11, 15, 57, 0.4)',
                 zIndex: 10,
                 transition: 'all 0.3s ease'
               }}
@@ -226,13 +226,13 @@ export default function Partnerships() {
                 width: isMobile ? '28px' : '50px',
                 height: isMobile ? '28px' : '50px',
                 borderRadius: '50%',
-                background: 'linear-gradient(135deg, #3C73FF 0%, #1D32F2 100%)',
+                background: '#0B0F39',
                 border: 'none',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 cursor: 'pointer',
-                boxShadow: '0 4px 15px rgba(60, 115, 255, 0.4)',
+                boxShadow: '0 4px 15px rgba(11, 15, 57, 0.4)',
                 zIndex: 10,
                 transition: 'all 0.3s ease'
               }}
