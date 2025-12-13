@@ -15,7 +15,7 @@ import {
 // Specialized offices data
 const specializedOffices = [
   { icon: Laptop, title: "Technology", color: "#3C73FF" },
-  { icon: BarChart3, title: "MEL", color: "#00E5CC" },
+  { icon: BarChart3, title: "M&E", color: "#00E5CC" },
   { icon: DollarSign, title: "Finance", color: "#1D32F2" },
   { icon: FlaskConical, title: "Research", color: "#3C73FF" },
   { icon: MessageSquare, title: "Communications", color: "#00E5CC" },
@@ -123,7 +123,7 @@ export default function HowWeWork() {
           {/* Section Header */}
           <div style={{ textAlign: 'center', marginBottom: isMobile ? '20px' : '28px' }}>
             <h2 style={{
-              fontFamily: "'Comfortaa', cursive",
+              fontFamily: "'Comfortaa', 'Poppins', cursive",
               fontSize: isMobile ? '32px' : '42px',
               fontWeight: 700,
               color: 'white',
@@ -158,75 +158,36 @@ export default function HowWeWork() {
               border: '1px solid rgba(255, 255, 255, 0.08)'
             }}>
               <h3 style={{
-              fontFamily: "'Poppins', sans-serif",
-              fontSize: isMobile ? '22px' : '28px',
-              fontWeight: 700,
-              background: 'linear-gradient(90deg, #ffffff 0%, #00E5CC 50%, #3C73FF 100%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-              marginBottom: '18px',
-              lineHeight: 1.3
-            }}>
-              Our Hybrid Model
-            </h3>
-            <p style={{
-              fontFamily: "'Inter', sans-serif",
-              fontSize: isMobile ? '14px' : '16px',
-              lineHeight: 1.8,
-              color: 'rgba(255, 255, 255, 0.9)',
-              marginBottom: '20px'
-            }}>
-              Our hybrid model combines{' '}
-              <span style={{ 
-                color: '#3C73FF',
-                fontWeight: 600
-              }}>
-                revenue-generating telemedicine tools
-              </span>{' '}
-              with{' '}
-              <span style={{ 
-                color: '#00E5CC',
-                fontWeight: 600
-              }}>
-                donor-funded projects
-              </span>{' '}
-              to create{' '}
-              <span style={{
-                color: '#00E5CC',
+                fontFamily: "'Poppins', 'Comfortaa', cursive",
+                fontSize: isMobile ? '22px' : '28px',
                 fontWeight: 700,
-                textShadow: '0 0 20px rgba(0, 229, 204, 0.5)'
+                background: 'linear-gradient(90deg, #ffffff 0%, #00E5CC 50%, #3C73FF 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+                marginBottom: '18px',
+                lineHeight: 1.3
               }}>
-                sustainable public health impact
-              </span>.
-            </p>
-            <p style={{
-              fontFamily: "'Inter', sans-serif",
-              fontSize: isMobile ? '14px' : '16px',
-              lineHeight: 1.8,
-              color: 'rgba(255, 255, 255, 0.9)'
-            }}>
-              Programmes are structured through a defined{' '}
-              <span style={{
+                Our Hybrid Model
+              </h3>
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.03)',
+                backdropFilter: 'blur(10px)',
+                borderRadius: '12px',
+                padding: isMobile ? '16px' : '22px',
+                marginBottom: '18px',
+                border: '1px solid rgba(255, 255, 255, 0.08)',
                 color: 'white',
-                fontWeight: 500
+                fontFamily: "'Poppins', 'Comfortaa', cursive",
+                fontSize: isMobile ? '15px' : '17px',
+                fontWeight: 500,
+                lineHeight: 1.7
               }}>
-                governance and accountability framework
-              </span>, led by{' '}
-              <span style={{
-                color: '#B5CCFF',
-                fontWeight: 600
-              }}>
-                executive leadership
-              </span>{' '}
-              and supported by{' '}
-              <span style={{
-                color: '#00E5CC',
-                fontWeight: 600
-              }}>
-                specialised offices
-              </span>.
-            </p>
+                <span style={{ color: '#fff', textShadow: '0 0 10px #3C73FF' }}>
+                  Our hybrid model combines revenue-generating telemedicine tools with donor-funded projects to create sustainable public health impact.<br /><br />
+                  Programmes are structured through a defined governance and accountability framework, led by executive leadership and supported by specialised offices.
+                </span>
+              </div>
           </div>
 
           {/* Right: Specialized Offices Grid */}
