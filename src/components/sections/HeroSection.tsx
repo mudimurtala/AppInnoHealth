@@ -28,8 +28,8 @@ export default function HeroSection() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 z-30">
         <div className="text-left max-w-4xl">
           <h1 className="font-bold leading-none" style={{ fontSize: 'clamp(3.5rem, 3vw, 3rem)' }}>
-            <span className="block" style={{ color: '#00E5CC' }}>Protecting</span>
-            <span className="block" style={{ color: '#3C73FF' }}>Life</span>
+            <span className="block" style={{ color: '#00E5CC' }}>Saving</span>
+            <span className="block" style={{ color: '#3C73FF' }}>Lives</span>
             <span className="text-white block">Through</span>
             <span className="block" style={{ color: '#3C73FF' }}>Innovation</span>
           </h1>
