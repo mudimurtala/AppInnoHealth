@@ -670,8 +670,10 @@ const Footer: React.FC = () => {
             )}
             <div style={{ display: 'flex', gap: isMobile ? '16px' : '12px' }}>
               <a
-                href="#"
+                href="https://www.linkedin.com/company/94865102/admin/dashboard/"
                 aria-label="LinkedIn"
+                target="_blank"
+                rel="noopener noreferrer"
                 style={{
                   color: '#666666',
                   transition: 'color 0.3s ease',
@@ -682,8 +684,10 @@ const Footer: React.FC = () => {
                 <LinkedInIcon />
               </a>
               <a
-                href="#"
+                href="http://Instagram.com/innohealth_tech"
                 aria-label="Instagram"
+                target="_blank"
+                rel="noopener noreferrer"
                 style={{
                   color: '#666666',
                   transition: 'color 0.3s ease',
