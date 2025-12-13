@@ -9,15 +9,11 @@ const collaborationCategories = [
   { icon: Lightbulb, label: "Tech" }
 ];
 
-// Strategic partner logos
+// Strategic partner logos (removed WHO, UNICEF, BMGF, SOLINA)
 const partnerLogos = [
-  { name: "WHO", logo: "/WHO.png" },
-  { name: "UNICEF", logo: "/UNICEF.png" },
-  { name: "BMGF", logo: "/BMGF.png" },
   { name: "CcHub", logo: "/CcHub.png" },
   { name: "3MTT", logo: "/3MTT.png" },
-  { name: "LUMILAB", logo: "/LUMILAB.png" },
-  { name: "SOLINA", logo: "/SOLINA.png" }
+  { name: "LUMILAB", logo: "/LUMILAB.png" }
 ];
 
 export default function Partnerships() {
@@ -257,7 +253,8 @@ export default function Partnerships() {
               scrollbarWidth: 'none',
               msOverflowStyle: 'none',
               WebkitOverflowScrolling: 'touch',
-              padding: isMobile ? '6px 0' : '10px 0'
+              padding: isMobile ? '6px 0' : '10px 0',
+              justifyContent: 'center'
             }}
           >
             {partnerLogos.map((partner, index) => (
