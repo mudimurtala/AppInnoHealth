@@ -18,13 +18,14 @@ interface NavbarMenuProps {
 // Menu items data
 const menuItems = [
   { icon: Calendar, label: "Book Appointment" },
-  { icon: FileText, label: "About Us" },
+  // About Us removed from menu; now in navbar
 ];
 
 
 
 export default function NavbarMenu({ isMobile = false }: NavbarMenuProps) {
   const [showTeam, setShowTeam] = React.useState(false);
+  const [menuOpen, setMenuOpen] = React.useState(false);
 
   // (TEMP) Remove scroll lock logic for debugging modal overlay on desktop
 
@@ -122,7 +123,10 @@ export default function NavbarMenu({ isMobile = false }: NavbarMenuProps) {
   // Desktop Menu Button and Dropdown
   return (
     <>
-      <DropdownMenu>
+      <DropdownMenu
+        open={menuOpen}
+        onOpenChange={setMenuOpen}
+      >
         <DropdownMenuTrigger asChild>
           <Button 
             className="text-white font-medium px-5 py-2 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
@@ -132,7 +136,10 @@ export default function NavbarMenu({ isMobile = false }: NavbarMenuProps) {
             }}
           >
             Menu
-            <ChevronDown className="ml-0.5 h-4 w-4" />
+            <ChevronDown 
+              className="ml-0.5 h-4 w-4 transition-transform duration-200"
+              style={{ transform: menuOpen ? 'rotate(0deg)' : 'rotate(180deg)' }}
+            />
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent 
@@ -143,37 +150,42 @@ export default function NavbarMenu({ isMobile = false }: NavbarMenuProps) {
             background: '#0B0F39',
             boxShadow: '0 0 0 2px rgba(255, 255, 255, 0.25), 0 25px 50px -12px rgba(0, 0, 0, 0.5)',
             borderRadius: '24px',
-            padding: '20px',
-            marginTop: '16px'
+            padding: '12px 8px',
+            marginTop: '16px',
+            maxWidth: '160px',
+            minWidth: '120px',
           }}
         >
-          {/* Grid layout like Google */}
           <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(3, 1fr)',
-            gap: '12px'
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '0',
+            width: '100%',
           }}>
             {menuItems.map((item, index) => (
               <div
                 key={index}
-                className="cursor-pointer transition-all duration-200"
+                className="cursor-pointer transition-all duration-200 w-full"
                 style={{
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  padding: '16px 12px',
+                  padding: '12px 0',
                   borderRadius: '12px',
-                  minWidth: '80px'
+                  minWidth: '80px',
+                  width: '100%',
                 }}
                 onClick={() => handleMenuClick(item.label)}
                 onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.1)'}
                 onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
               >
-                <item.icon className="h-7 w-7 text-white mb-3" />
+                <item.icon className="h-7 w-7 text-white mb-2" />
                 <span style={{
                   color: 'white',
-                  fontSize: '11px',
+                  fontSize: '12px',
                   fontWeight: 500,
                   textAlign: 'center',
                   lineHeight: '1.3'
