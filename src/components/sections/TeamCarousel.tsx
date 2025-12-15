@@ -147,9 +147,9 @@ export const TeamCarousel: React.FC = () => {
               key={member.name}
               style={{
                 background: 'linear-gradient(135deg, #0B0F39 0%, #2A3558 100%)',
-                borderRadius: '20px',
+                borderRadius: '24px',
                 boxShadow: '0 25px 60px rgba(60, 115, 255, 0.4)',
-                border: 'none',
+                border: '2px solid rgba(255, 255, 255, 0.25)',
                 maxWidth: 370,
                 minWidth: 270,
                 padding: '1.5rem',
@@ -161,8 +161,17 @@ export const TeamCarousel: React.FC = () => {
                 marginBottom: 8,
                 marginTop: 8,
               }}
-              className="flex-shrink-0 snap-center"
+              className="flex-shrink-0 snap-center team-carousel-card"
             >
+                    {/* Responsive mobile card width only for mobile view */}
+                    <style>{`
+                      @media (max-width: 640px) {
+                        .team-carousel-card {
+                          width: 90vw !important;
+                          max-width: 90vw !important;
+                        }
+                      }
+                    `}</style>
               <div
                 style={{
                   width: 96,
@@ -195,8 +204,9 @@ export const TeamCarousel: React.FC = () => {
               <div style={{ fontFamily: 'Comfortaa, cursive', color: '#00E5CC', fontSize: 13, marginTop: 6 }}>📍 Location: {member.location}</div>
             </div>
           ))}
-          {/* Add right-side padding after last card for spacing */}
-          <div style={{ minWidth: 48, height: 1 }} />
+          {/* Add left and right-side padding for mobile spacing */}
+          <div className="block md:hidden" style={{ minWidth: 16, height: 1 }} />
+          <div className="block md:hidden" style={{ minWidth: 16, height: 1 }} />
         </div>
       </div>
     </div>
