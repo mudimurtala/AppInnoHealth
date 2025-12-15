@@ -201,7 +201,9 @@ const Footer: React.FC = () => {
                   height: '28px',
                   marginBottom: '4px',
                   filter: 'brightness(0) invert(1)',
+                  cursor: 'pointer',
                 }}
+                onClick={() => window.location.reload()}
               />
               
               {/* Our Links */}
@@ -560,7 +562,9 @@ const Footer: React.FC = () => {
               height: '40px',
               marginBottom: '10px',
               filter: 'brightness(0) invert(1)',
+              cursor: 'pointer',
             }}
+            onClick={() => window.location.reload()}
           />
           <p
             style={{
