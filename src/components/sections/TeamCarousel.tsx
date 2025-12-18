@@ -131,9 +131,11 @@ export const TeamCarousel: React.FC = () => {
         <div
           ref={scrollRef}
           className="flex gap-4 sm:gap-8 snap-x snap-mandatory overflow-x-auto pb-2"
-          style={{ scrollBehavior: 'smooth', minWidth: '100%' }}
+          style={{ scrollBehavior: 'smooth' }}
           onScroll={handleScroll}
         >
+          {/* Left-side spacer for symmetry */}
+          <div style={{ width: 24, minWidth: 24, flexShrink: 0 }} />
           {TEAM_MEMBERS.map((member) => (
             <div
               key={member.name}
@@ -194,11 +196,8 @@ export const TeamCarousel: React.FC = () => {
               </div>
             </div>
           ))}
-          {/* Add left and right-side padding for mobile spacing */}
-          <div className="block md:hidden" style={{ minWidth: 16, height: 1 }} />
-          <div className="block md:hidden" style={{ minWidth: 16, height: 1 }} />
-          {/* Add a single large right-side spacer for desktop to ensure last card is fully visible */}
-          <div className="hidden md:block" style={{ width: 400, minWidth: 400, flexShrink: 0 }} />
+          {/* Right-side spacer to ensure last card is fully visible on all screens */}
+          <div style={{ width: 100, minWidth: 100, flexShrink: 0 }} />
         </div>
       </div>
     </div>
