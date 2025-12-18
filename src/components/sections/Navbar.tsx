@@ -385,27 +385,30 @@ export default function Navbar() {
                   onClick={e => e.stopPropagation()}
                 >
                   <button
-                    className="absolute top-2 right-2 sm:top-4 sm:right-6 z-10 w-14 h-14 flex items-center justify-center shadow-xl"
+                    className="fixed z-[2147483648] w-14 h-14 flex items-center justify-center shadow-2xl"
                     onClick={() => setShowTeam(false)}
                     aria-label="Close"
                     style={{
-                      background: 'linear-gradient(135deg, rgba(0,229,204,0.65) 0%, rgba(29,50,242,0.65) 100%)',
-                      color: 'rgba(255,255,255,0.85)',
+                      left: '50%',
+                      top: '1.25rem', // 20px ~ top-4
+                      transform: 'translateX(-50%)',
+                      background: 'linear-gradient(135deg, rgba(0,229,204,0.95) 0%, rgba(29,50,242,0.95) 100%)',
+                      color: 'rgba(255,255,255,0.98)',
                       fontSize: '2.3rem',
                       fontWeight: 900,
-                      border: '2.5px solid rgba(255,255,255,0.7)',
-                      boxShadow: '0 0 0 4px #00E5CC33, 0 8px 32px rgba(11,15,57,0.18)',
+                      border: '2.5px solid #00E5CC',
+                      boxShadow: '0 0 0 7px #00E5CC77, 0 12px 40px rgba(11,15,57,0.32)',
                       lineHeight: 1,
                       borderRadius: '9999px',
-                      backdropFilter: 'blur(2px)',
+                      backdropFilter: 'blur(6px)',
                       transition: 'box-shadow 0.2s, border 0.2s, background 0.2s',
-                      opacity: 0.85,
+                      opacity: 1,
+                      zIndex: 2147483648,
+                      position: 'fixed',
                     }}
-                    onMouseEnter={e => { e.currentTarget.style.boxShadow = '0 0 0 7px #00E5CC55, 0 12px 40px rgba(11,15,57,0.28)'; e.currentTarget.style.border = '2.5px solid #00E5CC'; e.currentTarget.style.opacity = '1'; }}
-                    onMouseLeave={e => { e.currentTarget.style.boxShadow = '0 0 0 4px #00E5CC33, 0 8px 32px rgba(11,15,57,0.18)'; e.currentTarget.style.border = '2.5px solid rgba(255,255,255,0.7)'; e.currentTarget.style.opacity = '0.85'; }}
                   >
                     <span style={{
-                      opacity: 0.85,
+                      opacity: 1,
                       borderRadius: '9999px',
                       width: '100%',
                       height: '100%',
