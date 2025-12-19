@@ -12,13 +12,13 @@ const services = [
     id: 2,
     title: "Maternal & Child Health Interventions",
     description: "Our field programmes support antenatal care, nutrition access, early childhood health, and emergency referral systems in communities with limited health infrastructure.",
-    image: "https://images.pexels.com/photos/3845126/pexels-photo-3845126.jpeg?auto=compress&cs=tinysrgb&w=400"
+    image: "https://images.unsplash.com/photo-1744807455254-92571bfdfdc8?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   },
   {
     id: 3,
     title: "Public Health Workforce Training",
     description: "We build digital capacity by training health workers in data analytics, smart documentation, and technology-based service delivery.",
-    image: "https://images.pexels.com/photos/5452268/pexels-photo-5452268.jpeg?auto=compress&cs=tinysrgb&w=400"
+    image: "https://images.unsplash.com/photo-1616449857930-96a18e7bc1f6?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   },
   {
     id: 4,
@@ -30,7 +30,7 @@ const services = [
     id: 5,
     title: "Grant & Resource Mobilisation",
     description: "We secure funding, partnerships, and sponsorships for community health solutions, ensuring long-term sustainability.",
-    image: "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=400"
+    image: "https://plus.unsplash.com/premium_photo-1707155466125-a7943a37e8f9?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   }
 ];
 
