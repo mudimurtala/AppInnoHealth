@@ -7,6 +7,7 @@ import {
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu";
 import { TeamCarousel } from "./TeamCarousel";
+import { BookAppointmentModal } from "./BookAppointmentModal";
 import React from "react";
 import { createPortal } from "react-dom";
 
@@ -23,17 +24,19 @@ const menuItems = [
 
 
 
+
 export default function NavbarMenu({ isMobile = false }: NavbarMenuProps) {
   const [showTeam, setShowTeam] = React.useState(false);
+  const [showBook, setShowBook] = React.useState(false);
   const [menuOpen, setMenuOpen] = React.useState(false);
-
-  // (TEMP) Remove scroll lock logic for debugging modal overlay on desktop
 
   const handleMenuClick = (label: string) => {
     if (label === "Our Team") {
       setShowTeam(true);
     }
-    // Add more handlers for other menu items if needed
+    if (label === "Book Appointment") {
+      setShowBook(true);
+    }
   };
 
   if (isMobile) {
@@ -115,6 +118,9 @@ export default function NavbarMenu({ isMobile = false }: NavbarMenuProps) {
               </div>
             </div>
           </>, document.body
+        )}
+        {showBook && (
+          <BookAppointmentModal open={showBook} onClose={() => setShowBook(false)} />
         )}
       </>
     );
@@ -219,6 +225,9 @@ export default function NavbarMenu({ isMobile = false }: NavbarMenuProps) {
             <TeamCarousel />
           </div>
         </div>, document.body
+      )}
+      {showBook && (
+        <BookAppointmentModal open={showBook} onClose={() => setShowBook(false)} />
       )}
     </>
   );
