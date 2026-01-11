@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 
 const heroImages = [
   "/mother2.webp",
@@ -9,24 +10,33 @@ const heroImages = [
 
 export default function HeroSection() {
   const [current, setCurrent] = useState(0);
+  const [direction, setDirection] = useState(1); // 1 for next, -1 for prev (future-proof)
 
   useEffect(() => {
     const interval = setInterval(() => {
+      setDirection(1);
       setCurrent((prev) => (prev + 1) % heroImages.length);
-    }, 2000); // 2 seconds
+    }, 3000); // 2 seconds
     return () => clearInterval(interval);
   }, []);
 
   return (
     <section className="relative text-white overflow-hidden">
       {/* Background image layer */}
-      <div className="absolute inset-0 z-0 transition-all duration-700">
-        <img
-          src={heroImages[current]}
-          alt="African mother with baby receiving healthcare"
-          className="w-full h-full object-cover transition-all duration-700"
-          style={{ objectPosition: 'right center' }}
-        />
+      <div className="absolute inset-0 z-0 w-full h-full overflow-hidden">
+        <AnimatePresence initial={false} custom={direction}>
+          <motion.img
+            key={current}
+            src={heroImages[current]}
+            alt="African mother with baby receiving healthcare"
+            className="w-full h-full object-cover absolute inset-0"
+            style={{ objectPosition: 'right center' }}
+            initial={{ x: direction > 0 ? '100%' : '-100%', opacity: 1 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: direction > 0 ? '-100%' : '100%', opacity: 1 }}
+            transition={{ x: { type: 'spring', stiffness: 80, damping: 30 }, opacity: { duration: 0.2 } }}
+          />
+        </AnimatePresence>
       </div>
       {/* Blue gradient overlay with brand colors */}
       <div 
