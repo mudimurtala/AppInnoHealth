@@ -288,7 +288,7 @@ const Footer: React.FC = () => {
                   +234 8045852791
                 </a>
                 <a
-                  href="mailto:info@innohealthafrica.org"
+                  href="mailto:admin@innohealth.tech"
                   style={{
                     display: 'flex',
                     alignItems: 'center',
@@ -340,7 +340,7 @@ const Footer: React.FC = () => {
                 +234 8045852791
               </a>
               <a
-                href="mailto:info@innohealthafrica.org"
+                href="mailto:admin@innohealth.tech"
                 style={{
                   display: 'flex',
                   alignItems: 'center',
@@ -355,7 +355,7 @@ const Footer: React.FC = () => {
                 onMouseLeave={(e) => (e.currentTarget.style.color = '#999999')}
               >
                 <Mail size={16} color="#00E5CC" />
-                info@innohealthafrica.org
+                admin@innohealth.tech
               </a>
             </div>
           </div>
