@@ -16,7 +16,7 @@ export default function HeroSection() {
     const interval = setInterval(() => {
       setDirection(1);
       setCurrent((prev) => (prev + 1) % heroImages.length);
-    }, 3000); // 2 seconds
+    }, 4000); // 2 seconds
     return () => clearInterval(interval);
   }, []);
 
