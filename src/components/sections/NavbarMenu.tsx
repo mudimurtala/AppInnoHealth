@@ -17,8 +17,9 @@ interface NavbarMenuProps {
 
 
 // Menu items data
+
 const menuItems = [
-  { icon: Calendar, label: "Book Appointment" },
+  { icon: Calendar, label: "Join InnoHealth" },
   // About Us removed from menu; now in navbar
 ];
 
@@ -34,7 +35,7 @@ export default function NavbarMenu({ isMobile = false }: NavbarMenuProps) {
     if (label === "Our Team") {
       setShowTeam(true);
     }
-    if (label === "Book Appointment") {
+    if (label === "Join InnoHealth") {
       setShowBook(true);
     }
   };
