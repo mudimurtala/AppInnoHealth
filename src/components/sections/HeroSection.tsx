@@ -1,29 +1,44 @@
+import React, { useEffect, useState } from "react";
+
+const heroImages = [
+  "/mother2.webp",
+  "/mother.webp",
+  "/mother4.webp",
+  "/mother3.webp"
+];
+
 export default function HeroSection() {
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % heroImages.length);
+    }, 2000); // 2 seconds
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="relative text-white overflow-hidden">
       {/* Background image layer */}
-      <div className="absolute inset-0 z-0">
-        <img 
-          src="/mother.png"
+      <div className="absolute inset-0 z-0 transition-all duration-700">
+        <img
+          src={heroImages[current]}
           alt="African mother with baby receiving healthcare"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover transition-all duration-700"
           style={{ objectPosition: 'right center' }}
         />
       </div>
-      
       {/* Blue gradient overlay with brand colors */}
       <div 
-        className="absolute inset-0 z-10 bg-brand-gradient" 
-        style={{ opacity: 0.82 }} 
+        className="absolute inset-0 z-10 bg-brand-gradient"
+        style={{ opacity: 0.82 }}
       />
-      
       {/* Decorative SVG overlay */}
       <div className="absolute inset-0 z-20 opacity-10">
         <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
           <path d="M0,50 Q25,40 50,50 T100,50 L100,100 L0,100 Z" fill="white" />
         </svg>
       </div>
-
       {/* Hero Content */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 z-30">
         <div className="text-left max-w-4xl">
@@ -35,7 +50,6 @@ export default function HeroSection() {
           </h1>
         </div>
       </div>
-
       {/* Wave decoration at bottom */}
       <div className="absolute bottom-0 left-0 right-0">
         <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
