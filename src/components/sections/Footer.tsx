@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { AboutUsModalContent } from "./AboutUsModalContent";
+import { ContactModalContent } from "./ContactModalContent";
+import { createPortal } from "react-dom";
 import { Mail, MapPin, Phone, Send } from 'lucide-react';
 
 // Social media icons as SVG components
@@ -38,6 +41,8 @@ const Footer: React.FC = () => {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
+  const [showAbout, setShowAbout] = useState(false);
+  const [showContact, setShowContact] = useState(false);
   const quickLinks = [
     { name: 'Home', href: '#' },
     { name: 'About', href: '#' },
@@ -221,20 +226,58 @@ const Footer: React.FC = () => {
                 </h3>
                 <div style={{ display: 'flex', gap: '16px' }}>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-                    {quickLinks.map((link, index) => (
-                      <a
-                        key={index}
-                        href={link.href}
-                        style={{
-                          color: index === 0 ? '#00E5CC' : '#999999',
-                          textDecoration: 'none',
-                          fontFamily: 'Inter, sans-serif',
-                          fontSize: '0.7rem',
-                        }}
-                      >
-                        {link.name}
-                      </a>
-                    ))}
+                    {quickLinks.map((link, index) => {
+                      if (link.name === 'About') {
+                        return (
+                          <a
+                            key={index}
+                            href="#about"
+                            onClick={e => { e.preventDefault(); setShowAbout(true); }}
+                            style={{
+                              color: '#999999',
+                              textDecoration: 'none',
+                              fontFamily: 'Inter, sans-serif',
+                              fontSize: '0.7rem',
+                              cursor: 'pointer',
+                            }}
+                          >
+                            {link.name}
+                          </a>
+                        );
+                      } else if (link.name === 'Contact') {
+                        return (
+                          <a
+                            key={index}
+                            href="#contact"
+                            onClick={e => { e.preventDefault(); setShowContact(true); }}
+                            style={{
+                              color: '#999999',
+                              textDecoration: 'none',
+                              fontFamily: 'Inter, sans-serif',
+                              fontSize: '0.7rem',
+                              cursor: 'pointer',
+                            }}
+                          >
+                            {link.name}
+                          </a>
+                        );
+                      } else {
+                        return (
+                          <a
+                            key={index}
+                            href={link.href}
+                            style={{
+                              color: index === 0 ? '#00E5CC' : '#999999',
+                              textDecoration: 'none',
+                              fontFamily: 'Inter, sans-serif',
+                              fontSize: '0.7rem',
+                            }}
+                          >
+                            {link.name}
+                          </a>
+                        );
+                      }
+                    })}
                   </div>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
                     {programLinks.map((link, index) => (
@@ -273,7 +316,7 @@ const Footer: React.FC = () => {
               </h3>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'flex-end' }}>
                 <a
-                  href="tel:+2348045852791"
+                  href="tel:+2348145598212"
                   style={{
                     display: 'flex',
                     alignItems: 'center',
@@ -285,7 +328,7 @@ const Footer: React.FC = () => {
                   }}
                 >
                   <Phone size={12} color="#00E5CC" />
-                  +234 8045852791
+                  +2348145598212
                 </a>
                 <a
                   href="mailto:admin@innohealth.tech"
@@ -322,7 +365,7 @@ const Footer: React.FC = () => {
             </h3>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', flexWrap: 'wrap', justifyContent: 'flex-start' }}>
               <a
-                href="tel:+2348045852791"
+                href="tel:+2348145598212"
                 style={{
                   display: 'flex',
                   alignItems: 'center',
@@ -337,7 +380,7 @@ const Footer: React.FC = () => {
                 onMouseLeave={(e) => (e.currentTarget.style.color = '#999999')}
               >
                 <Phone size={16} color="#00E5CC" />
-                +234 8045852791
+                +2348145598212
               </a>
               <a
                 href="mailto:admin@innohealth.tech"
@@ -377,23 +420,67 @@ const Footer: React.FC = () => {
             </h3>
             <div style={{ display: 'flex', gap: '40px', flexWrap: 'wrap', justifyContent: 'flex-start' }}>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                {quickLinks.map((link, index) => (
-                  <a
-                    key={index}
-                    href={link.href}
-                    style={{
-                      color: index === 0 ? '#00E5CC' : '#999999',
-                      textDecoration: 'none',
-                      fontFamily: 'Inter, sans-serif',
-                      fontSize: '0.9rem',
-                      transition: 'color 0.3s ease',
-                    }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = '#00E5CC')}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = index === 0 ? '#00E5CC' : '#999999')}
-                  >
-                    {link.name}
-                  </a>
-                ))}
+                {quickLinks.map((link, index) => {
+                  if (link.name === 'About') {
+                    return (
+                      <a
+                        key={index}
+                        href="#about"
+                        onClick={e => { e.preventDefault(); setShowAbout(true); }}
+                        style={{
+                          color: '#999999',
+                          textDecoration: 'none',
+                          fontFamily: 'Inter, sans-serif',
+                          fontSize: '0.9rem',
+                          transition: 'color 0.3s ease',
+                          cursor: 'pointer',
+                        }}
+                        onMouseEnter={e => (e.currentTarget.style.color = '#00E5CC')}
+                        onMouseLeave={e => (e.currentTarget.style.color = '#999999')}
+                      >
+                        {link.name}
+                      </a>
+                    );
+                  } else if (link.name === 'Contact') {
+                    return (
+                      <a
+                        key={index}
+                        href="#contact"
+                        onClick={e => { e.preventDefault(); setShowContact(true); }}
+                        style={{
+                          color: '#999999',
+                          textDecoration: 'none',
+                          fontFamily: 'Inter, sans-serif',
+                          fontSize: '0.9rem',
+                          transition: 'color 0.3s ease',
+                          cursor: 'pointer',
+                        }}
+                        onMouseEnter={e => (e.currentTarget.style.color = '#00E5CC')}
+                        onMouseLeave={e => (e.currentTarget.style.color = '#999999')}
+                      >
+                        {link.name}
+                      </a>
+                    );
+                  } else {
+                    return (
+                      <a
+                        key={index}
+                        href={link.href}
+                        style={{
+                          color: index === 0 ? '#00E5CC' : '#999999',
+                          textDecoration: 'none',
+                          fontFamily: 'Inter, sans-serif',
+                          fontSize: '0.9rem',
+                          transition: 'color 0.3s ease',
+                        }}
+                        onMouseEnter={e => (e.currentTarget.style.color = '#00E5CC')}
+                        onMouseLeave={e => (e.currentTarget.style.color = index === 0 ? '#00E5CC' : '#999999')}
+                      >
+                        {link.name}
+                      </a>
+                    );
+                  }
+                })}
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                 {programLinks.map((link, index) => (
@@ -729,7 +816,82 @@ const Footer: React.FC = () => {
           </div>
         </div>
       </div>
-    </footer>
+    {/* About Us Modal Overlay (Portal) for Footer */}
+    {showAbout && createPortal(
+      <div
+        id="about-modal-overlay"
+        style={{
+          position: 'fixed',
+          zIndex: 2147483647,
+          top: 0,
+          left: 0,
+          width: '100vw',
+          height: '100vh',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          background: 'rgba(0,0,0,0.7)',
+          pointerEvents: 'auto',
+        }}
+        onClick={() => setShowAbout(false)}
+      >
+        <div
+          className="relative flex flex-col items-center justify-center w-full max-w-full sm:max-w-2xl md:max-w-3xl lg:max-w-4xl mx-auto bg-transparent"
+          style={{ maxHeight: '95vh', overflowY: 'auto', paddingBottom: '2rem' }}
+          onClick={e => e.stopPropagation()}
+        >
+          <AboutUsModalContent onClose={() => setShowAbout(false)} />
+          <button
+            className="absolute right-4 bottom-4 z-20 w-14 h-14 flex items-center justify-center shadow-xl"
+            onClick={() => setShowAbout(false)}
+            aria-label="Close"
+            style={{
+              background: 'rgba(255, 255, 255, 0.25)',
+              color: 'rgba(255,255,255,0.85)',
+              fontSize: '2.3rem',
+              fontWeight: 900,
+              border: '2.5px solid rgba(255,255,255,0.7)',
+              boxShadow: '0 0 0 4px #00E5CC33, 0 8px 32px rgba(11,15,57,0.18)',
+              borderRadius: '50%',
+              transition: 'background 0.2s',
+            }}
+          >
+            ×
+          </button>
+        </div>
+      </div>,
+      document.body
+    )}
+    {/* Contact Modal Overlay (Portal) for Footer */}
+    {showContact && createPortal(
+      <div
+        id="contact-modal-overlay"
+        style={{
+          position: 'fixed',
+          zIndex: 2147483647,
+          top: 0,
+          left: 0,
+          width: '100vw',
+          height: '100vh',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          background: 'rgba(0,0,0,0.7)',
+          pointerEvents: 'auto',
+        }}
+        onClick={() => setShowContact(false)}
+      >
+        <div
+          className="relative flex flex-col items-center justify-center w-full max-w-full sm:max-w-2xl md:max-w-3xl lg:max-w-4xl mx-auto bg-transparent"
+          style={{ maxHeight: '95vh', overflowY: 'auto', paddingBottom: '2rem' }}
+          onClick={e => e.stopPropagation()}
+        >
+          <ContactModalContent onClose={() => setShowContact(false)} />
+        </div>
+      </div>,
+      document.body
+    )}
+  </footer>
   );
 };
 
