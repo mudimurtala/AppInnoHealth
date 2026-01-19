@@ -3,6 +3,7 @@ import { AboutUsModalContent } from "./AboutUsModalContent";
 import { ContactModalContent } from "./ContactModalContent";
 import { createPortal } from "react-dom";
 import { ProgramsModalContent } from "./ProgramsModalContent";
+import { GetInvolvedModalContent } from "./GetInvolvedModalContent";
 import { Mail, MapPin, Phone, Send } from 'lucide-react';
 
 const LinkedInIcon = () => (
@@ -30,15 +31,18 @@ const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
   const [email, setEmail] = useState('');
   const [isMobile, setIsMobile] = useState(false);
+  const [showAbout, setShowAbout] = useState(false);
+  const [showContact, setShowContact] = useState(false);
+  const [showPrograms, setShowPrograms] = useState(false);
+  const [showGetInvolved, setShowGetInvolved] = useState(false);
+
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
     checkMobile();
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
-  const [showAbout, setShowAbout] = useState(false);
-  const [showContact, setShowContact] = useState(false);
-  const [showPrograms, setShowPrograms] = useState(false);
+
   const quickLinks = [
     { name: 'Home', href: '#' },
     { name: 'About', href: '#' },
@@ -95,6 +99,7 @@ const Footer: React.FC = () => {
                     {programLinks.map((link, index) => (
                       <a key={index} href={link.href} style={{ color: '#999999', textDecoration: 'none', fontFamily: 'Inter, sans-serif', fontSize: '0.7rem', cursor: 'pointer' }} onClick={e => {
                         if (link.name === 'Our Programs') { e.preventDefault(); setShowPrograms(true); }
+                        if (link.name === 'Get Involved') { e.preventDefault(); setShowGetInvolved(true); }
                       }}>{link.name}</a>
                     ))}
                   </div>
@@ -210,23 +215,25 @@ const Footer: React.FC = () => {
                       >
                         {link.name}
                       </a>
-                    ) : (
+                    ) : link.name === 'Get Involved' ? (
                       <a
                         key={index}
-                        href={link.href}
+                        href="#get-involved"
+                        onClick={e => { e.preventDefault(); setShowGetInvolved(true); }}
                         style={{
                           color: '#999999',
                           textDecoration: 'none',
                           fontFamily: 'Inter, sans-serif',
                           fontSize: '0.9rem',
                           transition: 'color 0.3s ease',
+                          cursor: 'pointer',
                         }}
                         onMouseEnter={e => (e.currentTarget.style.color = '#00E5CC')}
                         onMouseLeave={e => (e.currentTarget.style.color = '#999999')}
                       >
                         {link.name}
                       </a>
-                    )
+                    ) : null
                   )}
                 </div>
               </div>
@@ -350,6 +357,14 @@ const Footer: React.FC = () => {
         <div id="programs-modal-overlay" style={{ position: 'fixed', zIndex: 2147483647, top: 0, left: 0, width: '100vw', height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(0,0,0,0.7)', pointerEvents: 'auto' }} onClick={() => setShowPrograms(false)}>
           <div className="relative flex flex-col items-center justify-center w-full max-w-full sm:max-w-2xl md:max-w-3xl lg:max-w-4xl mx-auto bg-transparent" style={{ maxHeight: '95vh', overflowY: 'auto', paddingBottom: '2rem' }} onClick={e => e.stopPropagation()}>
             <ProgramsModalContent onClose={() => setShowPrograms(false)} />
+          </div>
+        </div>,
+        document.body
+      )}
+      {showGetInvolved && createPortal(
+        <div id="get-involved-modal-overlay" style={{ position: 'fixed', zIndex: 2147483647, top: 0, left: 0, width: '100vw', height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(0,0,0,0.7)', pointerEvents: 'auto' }} onClick={() => setShowGetInvolved(false)}>
+          <div className="relative flex flex-col items-center justify-center w-full max-w-full sm:max-w-2xl md:max-w-3xl lg:max-w-4xl mx-auto bg-transparent" style={{ maxHeight: '95vh', overflowY: 'auto', paddingBottom: '2rem' }} onClick={e => e.stopPropagation()}>
+            <GetInvolvedModalContent onClose={() => setShowGetInvolved(false)} />
           </div>
         </div>,
         document.body
