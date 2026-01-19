@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 import { countries } from "../ui/countries";
-import { nigeriaStates } from "../ui/nigeriaStates";
 
 interface DoctorRegistrationFormProps {
   onSuccess: () => void;
@@ -91,29 +90,21 @@ const DoctorRegistrationForm: React.FC<DoctorRegistrationFormProps> = ({ onSucce
           ))}
         </select>
       </label>
-      <label style={{ fontWeight: 500, display: 'flex', flexDirection: 'column', gap: 10 }}>Location (State):
-        <select name="doctor_location" required style={{
-          borderRadius: 12,
-          border: '1px solid #B5CCFF',
-          padding: '10px 12px',
-          fontFamily: 'inherit',
-          background: '#1A2340',
-          color: '#fff',
-          appearance: 'none',
-          WebkitAppearance: 'none',
-          MozAppearance: 'none',
-          backgroundImage: `url("data:image/svg+xml;utf8,<svg fill='white' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>")`,
-          backgroundRepeat: 'no-repeat',
-          backgroundPosition: 'right 12px center',
-          backgroundSize: 20,
-          marginBottom: 10,
-        }}>
-          <option value="">Select State</option>
-          {nigeriaStates.map((state) => (
-            <option key={state} value={state}>{state}</option>
-          ))}
-        </select>
-      </label>
+      {/* Location Field */}
+      <div className="mb-4">
+        <label htmlFor="location" className="block text-sm font-medium text-white mb-1">
+          Location
+        </label>
+        <input
+          type="text"
+          id="location"
+          name="location"
+          required
+          style={{ borderRadius: 8, border: '1px solid #B5CCFF', padding: '10px 12px', fontFamily: 'inherit' }}
+          placeholder="Enter your location"
+          autoComplete="off"
+        />
+      </div>
       <label style={{ fontWeight: 500, display: 'flex', flexDirection: 'column', gap: 10 }}>Medical Registration Number:
         <input type="text" name="registration_number" required style={{ borderRadius: 8, border: '1px solid #B5CCFF', padding: '10px 12px', fontFamily: 'inherit' }} />
       </label>
