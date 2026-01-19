@@ -1,4 +1,3 @@
-
 import { Mail, MapPin, Phone } from "lucide-react";
 
 // Social media icons as SVG React components (copied from Footer)
@@ -70,6 +69,7 @@ export const ContactModalContent: React.FC<{ onClose: () => void }> = ({ onClose
         .contact-modal-content li,
         .contact-modal-content a,
         .contact-modal-content span {
+          font-size: 0.95
           font-size: 0.95rem !important;
         }
         .contact-modal-content h2 {
@@ -80,19 +80,23 @@ export const ContactModalContent: React.FC<{ onClose: () => void }> = ({ onClose
     <button
       onClick={onClose}
       aria-label="Close"
-      className="absolute contact-modal-close-btn top-4 right-4 text-white text-3xl font-bold z-10"
+      className="absolute contact-modal-close-btn top-4 right-4 text-white font-bold z-10"
       style={{
         background: 'rgba(255,255,255,0.15)',
         border: '2px solid rgba(255,255,255,0.3)',
         borderRadius: '50%',
-        width: 48,
-        height: 48,
+        width: 40,
+        height: 40,
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
         boxShadow: '0 0 0 4px #00E5CC33, 0 8px 32px rgba(11,15,57,0.18)',
         transition: 'background 0.2s',
         cursor: 'pointer',
+        fontSize: '1.7rem',
+        lineHeight: 1,
+        top: 24,
+        right: 24
       }}
     >
       ×
@@ -100,18 +104,39 @@ export const ContactModalContent: React.FC<{ onClose: () => void }> = ({ onClose
     <div className="contact-modal-content">
       <h2 className="text-4xl font-extrabold mb-8 text-center tracking-tight" style={{ color: '#00E5CC', letterSpacing: '0.01em' }}>Contact Us</h2>
       <div className="flex flex-col items-center justify-center mb-8 w-full">
-        {/* Phone and Email on one row */}
-        <div className="flex flex-row gap-8 items-center justify-center w-full flex-wrap">
-          <div className="flex items-center gap-3 text-lg">
+        {/* Phone and Email stacked on mobile, row on desktop */}
+        <div
+          className="flex items-center justify-center w-full flex-wrap gap-8 gap-y-4 contact-modal-row"
+        >
+          <div
+            className="flex items-center gap-3 text-lg contact-modal-phone"
+            style={{ width: '100%', justifyContent: 'center' }}
+          >
             <Phone size={22} color="#00E5CC" />
             <a href="tel:+2348145598212" className="hover:underline text-white font-semibold">+2348145598212</a>
           </div>
-          <div className="flex items-center gap-3 text-lg">
+          <div
+            className="flex items-center gap-3 text-lg contact-modal-email"
+            style={{ width: '100%', justifyContent: 'center' }}
+          >
             <Mail size={22} color="#00E5CC" />
             <a href="mailto:admin@innohealth.tech" className="hover:underline text-white font-semibold">admin@innohealth.tech</a>
           </div>
         </div>
       </div>
+      <style>{`
+        @media (max-width: 640px) {
+          .contact-modal-row {
+            flex-direction: column !important;
+            gap: 0.5rem !important;
+          }
+          .contact-modal-phone, .contact-modal-email {
+            width: 100% !important;
+            justify-content: center !important;
+            margin-bottom: 0.5rem !important;
+          }
+        }
+      `}</style>
       <div className="flex gap-6 justify-center mt-2">
         <a href="https://linkedin.com/company/innohealthafrica" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
           <LinkedInIcon />
