@@ -40,19 +40,23 @@ const GetInvolvedModalContent: React.FC<GetInvolvedModalContentProps> = ({ onClo
       <button
         onClick={onClose}
         aria-label="Close"
-        className="absolute top-4 right-4 text-white text-3xl font-bold z-10"
+        className="absolute top-4 right-4 text-white font-bold z-10"
         style={{
           background: 'rgba(255,255,255,0.15)',
           border: '2px solid rgba(255,255,255,0.3)',
           borderRadius: '50%',
-          width: 48,
-          height: 48,
+          width: 40,
+          height: 40,
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           boxShadow: '0 0 0 4px #00E5CC33, 0 8px 32px rgba(11,15,57,0.18)',
           transition: 'background 0.2s',
           cursor: 'pointer',
+          fontSize: '1.7rem',
+          lineHeight: 1,
+          top: 24,
+          right: 24
         }}
       >
         ×
