@@ -1581,7 +1581,8 @@ html {
 
 @property --tw-gradient-position {
   syntax: "*";
-  inherits: false
+  inherits: false;
+  initial-value: #0000;
 }
 
 @property --tw-gradient-from {
@@ -1736,5 +1737,30 @@ html {
   to {
     opacity: var(--tw-exit-opacity, 1);
     transform: translate3d(var(--tw-exit-translate-x, 0), var(--tw-exit-translate-y, 0), 0) scale3d(var(--tw-exit-scale, 1), var(--tw-exit-scale, 1), var(--tw-exit-scale, 1)) rotate(var(--tw-exit-rotate, 0));
+  }
+}
+
+nav.fixed-navbar-global {
+  position: fixed !important;
+  top: 16px !important;
+  left: 50% !important;
+  transform: translateX(-50%);
+  width: calc(100vw - 32px) !important;
+  max-width: 1200px;
+  z-index: 2147483647 !important;
+  box-shadow: 0 10px 15px -3px #0000001a, 0 4px 6px -4px #0000001a;
+  border-radius: 1.5rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  transition: box-shadow 0.2s, border-radius 0.2s, background 0.2s;
+}
+
+@media (max-width: 640px) {
+  nav.fixed-navbar-global {
+    width: calc(100vw - 12px) !important;
+    top: 8px !important;
+    border-radius: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
   }
 }

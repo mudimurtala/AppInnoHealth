@@ -20,15 +20,16 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="bg-brand-gradient shadow-lg fixed top-0 left-0 w-full z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <nav className="bg-brand-gradient shadow-lg fixed-navbar-global">
+        <div className="max-w-7xl mx-auto px-0 sm:px-0 lg:px-0">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
-            <div className="flex items-center cursor-pointer" onClick={() => window.location.reload()}>
+            <div className="flex items-center cursor-pointer pl-0 sm:pl-0" onClick={() => window.location.reload()} style={{marginLeft: '-0.5rem'}}>
               <img 
                 src="/logo.png" 
                 alt="InnoHealth Africa Technology" 
-                className="h-12 w-auto brightness-0 invert cursor-pointer" 
+                className="h-16 w-auto brightness-0 invert cursor-pointer" 
+                style={{ minWidth: 64, minHeight: 64 }}
               />
             </div>
             
@@ -78,11 +79,17 @@ export default function Navbar() {
                         color: #fff;
                         background: transparent;
                         border: none;
-                        font-size: 1rem;
+                        font-size: 0.97rem;
                         font-weight: 500;
                         cursor: pointer;
-                        padding: 0 0.5rem;
+                        padding: 0 0.35rem;
                         transition: color 0.2s;
+                        white-space: nowrap;
+                        line-height: 1.2;
+                        letter-spacing: 0.01em;
+                        max-width: 100%;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
                       }
                       .nav-link:after {
                         content: '';
@@ -178,13 +185,14 @@ export default function Navbar() {
             </div>
 
             {/* Mobile Menu Button */}
-            <div className="md:hidden">
+            <div className="md:hidden pr-0 sm:pr-0" style={{marginRight: '-0.5rem'}}>
               <button 
                 onClick={() => setIsMenuOpen(!isMenuOpen)} 
                 aria-label="Toggle menu" 
                 className="text-white p-2 relative z-50"
+                style={{ width: 48, height: 48, minWidth: 48, minHeight: 48 }}
               >
-                {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                {isMenuOpen ? <X className="h-8 w-8" /> : <Menu className="h-8 w-8" />}
               </button>
             </div>
           </div>
@@ -283,7 +291,8 @@ export default function Navbar() {
                   transition: 'background-color 0.2s'
                 }}
                 onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.1)'}
-                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'
+                }
               >
                 Impact Focus
               </button>

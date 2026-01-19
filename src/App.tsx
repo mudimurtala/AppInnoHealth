@@ -19,9 +19,8 @@ import {
 
 export default function App() {
 
-
   return (
-    <div className="w-full">
+    <div className="w-full pt-16">
       {/* Navigation Bar */}
       <Navbar />
       {/* Hero Section - Main banner with company tagline */}
