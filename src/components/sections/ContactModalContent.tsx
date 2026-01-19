@@ -138,16 +138,16 @@ export const ContactModalContent: React.FC<{ onClose: () => void }> = ({ onClose
         }
       `}</style>
       <div className="flex gap-6 justify-center mt-2">
-        <a href="https://linkedin.com/company/innohealthafrica" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <a href="https://www.linkedin.com/company/94865102/admin/dashboard/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
           <LinkedInIcon />
         </a>
-        <a href="https://instagram.com/innohealthafrica" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <a href="http://instagram.com/innohealth_tech" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
           <InstagramIcon />
         </a>
-        <a href="https://facebook.com/innohealthafrica" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+        <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
           <FacebookIcon />
         </a>
-        <a href="https://x.com/innohealthafrica" target="_blank" rel="noopener noreferrer" aria-label="X">
+        <a href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="X">
           <XIcon />
         </a>
       </div>

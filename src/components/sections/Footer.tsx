@@ -4,7 +4,10 @@ import { ContactModalContent } from "./ContactModalContent";
 import { createPortal } from "react-dom";
 import { ProgramsModalContent } from "./ProgramsModalContent";
 import { GetInvolvedModalContent } from "./GetInvolvedModalContent";
+import { ComingSoonModalContent } from "./ComingSoonModalContent";
 import { Mail, MapPin, Phone, Send } from 'lucide-react';
+import { PrivacyPolicyModalContent } from "./PrivacyPolicyModalContent";
+import { TermsModalContent } from "./TermsModalContent";
 
 const LinkedInIcon = () => (
   <svg viewBox="0 0 24 24" fill="currentColor" style={{ width: '18px', height: '18px' }}>
@@ -35,6 +38,9 @@ const Footer: React.FC = () => {
   const [showContact, setShowContact] = useState(false);
   const [showPrograms, setShowPrograms] = useState(false);
   const [showGetInvolved, setShowGetInvolved] = useState(false);
+  const [showComingSoon, setShowComingSoon] = useState<{ open: boolean, title: string, message: string } | null>(null);
+  const [showPrivacyPolicy, setShowPrivacyPolicy] = useState(false);
+  const [showTerms, setShowTerms] = useState(false);
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
@@ -265,9 +271,20 @@ const Footer: React.FC = () => {
                       fontFamily: 'Inter, sans-serif',
                       fontSize: '0.9rem',
                       transition: 'color 0.3s ease',
+                      cursor: 'pointer',
                     }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = '#00E5CC')}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = '#999999')}
+                    onClick={e => {
+                      e.preventDefault();
+                      setShowComingSoon({
+                        open: true,
+                        title: link.name,
+                        message: link.name === 'News & Updates'
+                          ? 'Our News & Updates section is coming soon. Please check back later!'
+                          : 'Impact Reports will be available soon. Stay tuned!'
+                      });
+                    }}
+                    onMouseEnter={e => (e.currentTarget.style.color = '#00E5CC')}
+                    onMouseLeave={e => (e.currentTarget.style.color = '#999999')}
                   >
                     {link.name}
                   </a>
@@ -317,8 +334,8 @@ const Footer: React.FC = () => {
           {/* Left - Legal Links - Hidden on mobile */}
           {!isMobile && (
             <div style={{ display: 'flex', gap: '24px', flexWrap: 'wrap' }}>
-              <a href="#" style={{ color: '#666666', textDecoration: 'none', fontFamily: 'Inter, sans-serif', fontSize: '0.85rem', transition: 'color 0.3s ease' }} onMouseEnter={e => (e.currentTarget.style.color = '#ffffff')} onMouseLeave={e => (e.currentTarget.style.color = '#666666')}>Privacy Policy</a>
-              <a href="#" style={{ color: '#666666', textDecoration: 'none', fontFamily: 'Inter, sans-serif', fontSize: '0.85rem', transition: 'color 0.3s ease' }} onMouseEnter={e => (e.currentTarget.style.color = '#ffffff')} onMouseLeave={e => (e.currentTarget.style.color = '#666666')}>Terms & Conditions</a>
+              <a href="#" style={{ color: '#666666', textDecoration: 'none', fontFamily: 'Inter, sans-serif', fontSize: '0.85rem', transition: 'color 0.3s ease', cursor: 'pointer' }} onClick={e => { e.preventDefault(); setShowPrivacyPolicy(true); }} onMouseEnter={e => (e.currentTarget.style.color = '#ffffff')} onMouseLeave={e => (e.currentTarget.style.color = '#666666')}>Privacy Policy</a>
+              <a href="#" style={{ color: '#666666', textDecoration: 'none', fontFamily: 'Inter, sans-serif', fontSize: '0.85rem', transition: 'color 0.3s ease', cursor: 'pointer' }} onClick={e => { e.preventDefault(); setShowTerms(true); }} onMouseEnter={e => (e.currentTarget.style.color = '#ffffff')} onMouseLeave={e => (e.currentTarget.style.color = '#666666')}>Terms & Conditions</a>
             </div>
           )}
           {/* Center - Copyright */}
@@ -365,6 +382,30 @@ const Footer: React.FC = () => {
         <div id="get-involved-modal-overlay" style={{ position: 'fixed', zIndex: 2147483647, top: 0, left: 0, width: '100vw', height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(0,0,0,0.7)', pointerEvents: 'auto' }} onClick={() => setShowGetInvolved(false)}>
           <div className="relative flex flex-col items-center justify-center w-full max-w-full sm:max-w-2xl md:max-w-3xl lg:max-w-4xl mx-auto bg-transparent" style={{ maxHeight: '95vh', overflowY: 'auto', paddingBottom: '2rem' }} onClick={e => e.stopPropagation()}>
             <GetInvolvedModalContent onClose={() => setShowGetInvolved(false)} />
+          </div>
+        </div>,
+        document.body
+      )}
+      {showComingSoon?.open && createPortal(
+        <div id="coming-soon-modal-overlay" style={{ position: 'fixed', zIndex: 2147483647, top: 0, left: 0, width: '100vw', height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(0,0,0,0.7)', pointerEvents: 'auto' }} onClick={() => setShowComingSoon(null)}>
+          <div className="relative flex flex-col items-center justify-center w-full max-w-full sm:max-w-2xl md:max-w-3xl lg:max-w-4xl mx-auto bg-transparent" style={{ maxHeight: '95vh', overflowY: 'auto', paddingBottom: '2rem' }} onClick={e => e.stopPropagation()}>
+            <ComingSoonModalContent onClose={() => setShowComingSoon(null)} title={showComingSoon.title} message={showComingSoon.message} />
+          </div>
+        </div>,
+        document.body
+      )}
+      {showPrivacyPolicy && createPortal(
+        <div id="privacy-policy-modal-overlay" style={{ position: 'fixed', zIndex: 2147483647, top: 0, left: 0, width: '100vw', height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(0,0,0,0.7)', pointerEvents: 'auto' }} onClick={() => setShowPrivacyPolicy(false)}>
+          <div className="relative flex flex-col items-center justify-center w-full max-w-full sm:max-w-2xl md:max-w-3xl lg:max-w-4xl mx-auto bg-transparent" style={{ maxHeight: '95vh', overflowY: 'auto', paddingBottom: '2rem' }} onClick={e => e.stopPropagation()}>
+            <PrivacyPolicyModalContent onClose={() => setShowPrivacyPolicy(false)} />
+          </div>
+        </div>,
+        document.body
+      )}
+      {showTerms && createPortal(
+        <div id="terms-modal-overlay" style={{ position: 'fixed', zIndex: 2147483647, top: 0, left: 0, width: '100vw', height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(0,0,0,0.7)', pointerEvents: 'auto' }} onClick={() => setShowTerms(false)}>
+          <div className="relative flex flex-col items-center justify-center w-full max-w-full sm:max-w-2xl md:max-w-3xl lg:max-w-4xl mx-auto bg-transparent" style={{ maxHeight: '95vh', overflowY: 'auto', paddingBottom: '2rem' }} onClick={e => e.stopPropagation()}>
+            <TermsModalContent onClose={() => setShowTerms(false)} />
           </div>
         </div>,
         document.body
