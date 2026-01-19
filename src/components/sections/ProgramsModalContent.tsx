@@ -36,19 +36,23 @@ export const ProgramsModalContent: React.FC<{ onClose: () => void }> = ({ onClos
     <button
       onClick={onClose}
       aria-label="Close"
-      className="absolute top-4 right-4 text-white text-3xl font-bold z-10"
+      className="absolute top-4 right-4 text-white font-bold z-10"
       style={{
         background: 'rgba(255,255,255,0.15)',
         border: '2px solid rgba(255,255,255,0.3)',
         borderRadius: '50%',
-        width: 48,
-        height: 48,
+        width: 40,
+        height: 40,
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
         boxShadow: '0 0 0 4px #00E5CC33, 0 8px 32px rgba(11,15,57,0.18)',
         transition: 'background 0.2s',
         cursor: 'pointer',
+        fontSize: '1.7rem',
+        lineHeight: 1,
+        top: 24,
+        right: 24
       }}
     >
       ×
@@ -78,18 +82,27 @@ export const ProgramsModalContent: React.FC<{ onClose: () => void }> = ({ onClos
               border: '1px solid #00E5CC33',
               borderRadius: 14,
               padding: '1rem 1.5rem',
-              minHeight: 60,
-              marginBottom: 16,
-              boxShadow: '0 2px 8px 0 #0B0F3922',
-              width: '100%',
-              maxWidth: 480,
+              marginBottom: 12,
+              fontSize: '1rem',
+              color: '#fff',
+              fontFamily: 'Inter, sans-serif',
+              fontWeight: 500,
+              boxShadow: '0 2px 8px 0 #00E5CC11',
             }}
           >
-            <span className="text-[#00E5CC] text-2xl font-bold mr-2" style={{ lineHeight: 1, alignSelf: 'center' }}>•</span>
-            <span className="block font-medium text-base text-white text-left" style={{ wordBreak: 'break-word', alignSelf: 'center' }}>{prog}</span>
+            <span style={{ color: '#00E5CC', fontWeight: 700, marginRight: 12 }}>•</span> {prog}
           </li>
         ))}
       </ul>
+      <div className="flex justify-center mt-6">
+        <button
+          className="px-6 py-2 rounded-full bg-[#00E5CC] text-[#0B0F39] font-semibold hover:bg-[#00bfa3] transition text-lg shadow-lg"
+          style={{ minWidth: 120 }}
+          onClick={onClose}
+        >
+          Close
+        </button>
+      </div>
     </div>
   </div>
 );
