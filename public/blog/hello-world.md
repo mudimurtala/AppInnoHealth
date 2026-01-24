@@ -1,4 +1,3 @@
-
 # InnoHealth Africa Technology: Bridging Healthcare and Innovation
 
 ## Empowering Communities Through Technology

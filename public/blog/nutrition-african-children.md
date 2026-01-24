@@ -44,7 +44,3 @@ Nutrition is the cornerstone of a child’s health, learning, and happiness. In 
 ## Conclusion
 
 Good nutrition is not a luxury—it is a right for every African child. By making small, informed changes, parents and communities can help children reach their full potential, both physically and mentally.
-
----
-
-*InnoHealth Africa Technology — Supporting Healthy Futures for African Children*

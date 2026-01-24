@@ -38,19 +38,3 @@ The WHO recommends:
 - **Children and adolescents:** At least 60 minutes per day of moderate-to-vigorous physical activity.
 
 ## Tips for Getting More Active
-
-- Find activities you enjoy—walking, dancing, cycling, or sports.
-- Start small and gradually increase your activity level.
-- Make exercise a social activity—invite friends or family.
-- Incorporate movement into your daily routine.
-- Set realistic goals and track your progress.
-
-## Conclusion
-
-Exercise is a powerful tool for health and well-being. By making physical activity a regular part of life, we can prevent disease, improve our mood, and enjoy a better quality of life. As the WHO says, "Every move counts."
-
----
-*References:*
-- World Health Organization (WHO)
-- Centers for Disease Control and Prevention (CDC)
-- National Institute on Aging

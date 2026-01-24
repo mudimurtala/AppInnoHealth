@@ -5,37 +5,37 @@ import BlogPost from './BlogPost';
 const posts = [
   {
     title: 'Welcome to the InnoHealth Africa Blog',
-    file: '/src/blog/hello-world.md',
+    file: '/blog/hello-world.md',
     date: '2026-01-22',
     author: 'Mudi Murtala',
   },
   {
     title: 'The Importance of Nutrition in African Children',
-    file: '/src/blog/nutrition-african-children.md',
+    file: '/blog/nutrition-african-children.md',
     date: '2026-01-23',
     author: 'Mudi Murtala',
   },
   {
     title: 'The Importance of Breastfeeding: Nourishing the Future',
-    file: '/src/blog/importance-of-breastfeeding.md',
+    file: '/blog/importance-of-breastfeeding.md',
     date: '2026-01-23',
     author: 'Mudi Murtala',
   },
   {
     title: 'The Value of Healthcare Workers: Transforming Societies',
-    file: '/src/blog/value-of-healthcare-workers.md',
+    file: '/blog/value-of-healthcare-workers.md',
     date: '2026-01-24',
     author: 'Mudi Murtala',
   },
   {
     title: 'Mental Health Awareness: Understanding, Importance, and Global Perspectives',
-    file: '/src/blog/mental-health-awareness.md',
+    file: '/blog/mental-health-awareness.md',
     date: '2026-01-24',
     author: 'Mudi Murtala',
   },
   {
     title: 'The Importance of Exercise: Health Benefits and Risks of Inactivity',
-    file: '/src/blog/importance-of-exercise.md',
+    file: '/blog/importance-of-exercise.md',
     date: '2026-01-24',
     author: 'Mudi Murtala',
   },
