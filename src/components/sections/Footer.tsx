@@ -50,9 +50,10 @@ const Footer: React.FC = () => {
   }, []);
 
   const quickLinks = [
-    { name: 'Home', href: '#' },
+    { name: 'Home', href: '/' },
     { name: 'About', href: '#' },
     { name: 'Contact', href: '#' },
+    { name: 'Blog', href: '/blog' }, // Add Blog link
   ];
   const programLinks = [
     { name: 'Our Programs', href: '#' },
@@ -89,7 +90,7 @@ const Footer: React.FC = () => {
           {/* Left Column on Mobile: Logo + Our Links */}
           {isMobile ? (
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              <img src="/logo.png" alt="InnoHealth Africa Technology" loading="lazy" style={{ height: '28px', marginBottom: '4px', filter: 'brightness(0) invert(1)', cursor: 'pointer' }} onClick={() => window.location.reload()} />
+              <img src="/logo.png" alt="InnoHealth Africa Technology" loading="lazy" style={{ height: '28px', marginBottom: '4px', filter: 'brightness(0) invert(1)', cursor: 'pointer' }} onClick={() => window.location.href = '/'} />
               <div>
                 <h3 style={{ fontFamily: 'Comfortaa, cursive', fontSize: '0.8rem', fontWeight: 700, color: '#ffffff', marginBottom: '10px' }}>Our Links</h3>
                 <div style={{ display: 'flex', gap: '16px' }}>
@@ -97,7 +98,8 @@ const Footer: React.FC = () => {
                     {quickLinks.map((link, index) => (
                       <a key={index} href={link.href} style={{ color: '#999999', textDecoration: 'none', fontFamily: 'Inter, sans-serif', fontSize: '0.7rem', cursor: 'pointer' }} onClick={e => {
                         if (link.name === 'About') { e.preventDefault(); setShowAbout(true); }
-                        if (link.name === 'Contact') { e.preventDefault(); setShowContact(true); }
+                        else if (link.name === 'Contact') { e.preventDefault(); setShowContact(true); }
+                        else if (link.name === 'Blog') { e.preventDefault(); window.location.href = '/blog'; }
                       }}>{link.name}</a>
                     ))}
                   </div>
@@ -166,6 +168,26 @@ const Footer: React.FC = () => {
                           key={index}
                           href="#contact"
                           onClick={e => { e.preventDefault(); setShowContact(true); }}
+                          style={{
+                            color: '#999999',
+                            textDecoration: 'none',
+                            fontFamily: 'Inter, sans-serif',
+                            fontSize: '0.9rem',
+                            transition: 'color 0.3s ease',
+                            cursor: 'pointer',
+                          }}
+                          onMouseEnter={e => (e.currentTarget.style.color = '#00E5CC')}
+                          onMouseLeave={e => (e.currentTarget.style.color = '#999999')}
+                        >
+                          {link.name}
+                        </a>
+                      );
+                    } else if (link.name === 'Blog') {
+                      return (
+                        <a
+                          key={index}
+                          href="/blog"
+                          onClick={e => { e.preventDefault(); window.location.href = '/blog'; }}
                           style={{
                             color: '#999999',
                             textDecoration: 'none',
@@ -323,7 +345,7 @@ const Footer: React.FC = () => {
             <div style={{ position: 'absolute', right: '15%', top: '10%', width: '200px', height: '300px', background: '#333333', transform: 'rotate(-15deg) skewY(-5deg)' }} />
           </div>
           <div style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
-            <img src="/logo.png" alt="InnoHealth Africa Technology" loading="lazy" style={{ height: '40px', marginBottom: '10px', filter: 'brightness(0) invert(1)', cursor: 'pointer' }} onClick={() => window.location.reload()} />
+            <img src="/logo.png" alt="InnoHealth Africa Technology" loading="lazy" style={{ height: '40px', marginBottom: '10px', filter: 'brightness(0) invert(1)', cursor: 'pointer' }} onClick={() => window.location.href = '/'} />
             <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '1.1rem', color: '#ffffff', fontWeight: 300 }}>Let's build a healthier Africa together.</p>
           </div>
         </div>
