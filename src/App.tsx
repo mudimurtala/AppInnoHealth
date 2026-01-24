@@ -4,6 +4,7 @@
 
 
 import React, { useEffect, useRef, useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {
   Navbar,
   HeroSection,
@@ -12,31 +13,33 @@ import {
   ImpactFocus,
   GovernanceAccountability,
   Partnerships,
-  Footer
+  Footer,
+  BlogList
 } from "./components/sections";
 
-
-
 export default function App() {
-
   return (
-    <div className="w-full pt-16">
-      {/* Navigation Bar */}
-      <Navbar />
-      {/* Hero Section - Main banner with company tagline */}
-      <HeroSection />
-      {/* Our Services - Service cards carousel */}
-      <OurServices />
-      {/* How We Work - Hybrid model and governance */}
-      <HowWeWork />
-      {/* Impact Focus - Our impact goals */}
-      <ImpactFocus />
-      {/* Governance & Accountability */}
-      <GovernanceAccountability />
-      {/* Partnerships - Our collaborators */}
-      <Partnerships />
-      {/* Footer - Contact and links */}
-      <Footer />
-    </div>
+    <Router>
+      <div className="w-full pt-16">
+        <Navbar />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <HeroSection />
+                <OurServices />
+                <HowWeWork />
+                <ImpactFocus />
+                <GovernanceAccountability />
+                <Partnerships />
+              </>
+            }
+          />
+          <Route path="/blog" element={<BlogList />} />
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
   );
 }
