@@ -90,7 +90,7 @@ const Footer: React.FC = () => {
           {/* Left Column on Mobile: Logo + Our Links */}
           {isMobile ? (
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              <img src="/logo.png" alt="InnoHealth Africa Technology" loading="lazy" style={{ height: '28px', marginBottom: '4px', filter: 'brightness(0) invert(1)', cursor: 'pointer' }} onClick={() => window.location.href = '/'} />
+              <img src="/images/branding/logo.png" alt="InnoHealth Africa Technology" loading="lazy" style={{ height: '28px', marginBottom: '4px', filter: 'brightness(0) invert(1)', cursor: 'pointer' }} onClick={() => window.location.href = '/'} />
               <div>
                 <h3 style={{ fontFamily: 'Comfortaa, cursive', fontSize: '0.8rem', fontWeight: 700, color: '#ffffff', marginBottom: '10px' }}>Our Links</h3>
                 <div style={{ display: 'flex', gap: '16px' }}>
@@ -345,7 +345,7 @@ const Footer: React.FC = () => {
             <div style={{ position: 'absolute', right: '15%', top: '10%', width: '200px', height: '300px', background: '#333333', transform: 'rotate(-15deg) skewY(-5deg)' }} />
           </div>
           <div style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
-            <img src="/logo.png" alt="InnoHealth Africa Technology" loading="lazy" style={{ height: '40px', marginBottom: '10px', filter: 'brightness(0) invert(1)', cursor: 'pointer' }} onClick={() => window.location.href = '/'} />
+            <img src="/images/branding/logo.png" alt="InnoHealth Africa Technology" loading="lazy" style={{ height: '40px', marginBottom: '10px', filter: 'brightness(0) invert(1)', cursor: 'pointer' }} onClick={() => window.location.href = '/'} />
             <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '1.1rem', color: '#ffffff', fontWeight: 300 }}>Let's build a healthier Africa together.</p>
           </div>
         </div>

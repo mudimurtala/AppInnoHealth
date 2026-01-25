@@ -8,49 +8,49 @@ const TEAM_MEMBERS = [
     name: "Nasir Yusuf",
     title: "Co-Founder & Chief Executive Officer (CEO)",
     // bio and location removed
-    image: "/nasir-yusuf-ahmad.webp",
+    image: "/images/team/nasir-yusuf-ahmad.webp",
   },
   {
     name: "Yusuf Hamisu",
     title: "Co-Founder & Senior Programme Officer",
     // bio and location removed
-    image: "/yusuf-hamisu.webp",
+    image: "/images/team/yusuf-hamisu.webp",
   },
   {
     name: "Mudi Murtala",
     title: "Chief Technology Officer (CTO)",
     // bio and location removed
-    image: "/mudi-murtala-two.webp",
+    image: "/images/team/mudi-murtala-two.webp",
   },
   {
     name: "David Elibe",
     title: "Communications Manager",
     // bio and location removed
-    image: "/david-elibe.webp",
+    image: "/images/team/david-elibe.webp",
   },
   {
     name: "Alamin Ahmad",
     title: "Backend Engineer",
     // bio and location removed
-    image: "/alamin-ahmad.webp",
+    image: "/images/team/alamin-ahmad.webp",
   },
   {
     name: "Maryam Muhammad",
     title: "Project Manager",
     // bio and location removed
-    image: "/maryam-muhammad.webp",
+    image: "/images/team/maryam-muhammad.webp",
   },
   {
     name: "Ayuba Amadi",
     title: "Grants & Resource Mobilisation Officer",
     // bio and location removed
-    image: "/ayuba-amadi.webp",
+    image: "/images/team/ayuba-amadi.webp",
   },
   {
     name: "Winnie Mark",
     title: "Monitoring & Evaluation Officer",
     // bio and location removed
-    image: "/winnie-mark.webp",
+    image: "/images/team/winnie-mark.webp",
   },
 ];
 

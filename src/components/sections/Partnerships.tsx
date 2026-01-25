@@ -11,9 +11,9 @@ const collaborationCategories = [
 
 // Strategic partner logos (removed WHO, UNICEF, BMGF, SOLINA)
 const partnerLogos = [
-  { name: "CcHub", logo: "/CcHub.png" },
-  { name: "3MTT", logo: "/3MTT.png" },
-  { name: "LUMILAB", logo: "/LUMILAB.png" }
+  { name: "CcHub", logo: "/images/partners/CcHub.png" },
+  { name: "3MTT", logo: "/images/partners/3MTT.png" },
+  { name: "LUMILAB", logo: "/images/partners/LUMILAB.png" }
 ];
 
 export default function Partnerships() {

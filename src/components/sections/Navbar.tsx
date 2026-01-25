@@ -26,7 +26,7 @@ export default function Navbar() {
             {/* Logo */}
             <div className="flex items-center cursor-pointer pl-0 sm:pl-0" onClick={() => window.location.href = '/'} style={{marginLeft: '-0.5rem'}}>
               <img 
-                src="/logo.png" 
+                src="/images/branding/logo.png" 
                 alt="InnoHealth Africa Technology" 
                 className="h-16 w-auto brightness-0 invert cursor-pointer" 
                 style={{ minWidth: 64, minHeight: 64 }}

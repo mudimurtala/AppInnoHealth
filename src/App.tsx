@@ -3,7 +3,7 @@
 
 
 
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {
   Navbar,
@@ -14,12 +14,14 @@ import {
   GovernanceAccountability,
   Partnerships,
   Footer,
-  BlogList
+  BlogList,
+  FloatingBlogButton
 } from "./components/sections";
 
 export default function App() {
   return (
     <Router>
+      <FloatingBlogButton />
       <div className="w-full pt-16">
         <Navbar />
         <Routes>

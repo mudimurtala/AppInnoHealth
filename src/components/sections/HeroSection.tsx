@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 const heroImages = [
-  "/mother2.webp",
-  "/mother.webp",
-  "/mother4.webp",
-  "/mother3.webp"
+  "/images/hero/mother2.webp",
+  "/images/hero/mother.webp",
+  "/images/hero/mother4.webp",
+  "/images/hero/mother3.webp"
 ];
 
 export default function HeroSection() {
