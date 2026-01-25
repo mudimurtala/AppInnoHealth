@@ -34,7 +34,7 @@ We invite you to be part of this journey:
 
 ## Latest Updates
 - **January 2026:** Launched our new telemedicine app
-- **December 2025:** Hosted a free health camp in Lagos
+- **December 2025:** Hosted a free health camp in Katsina
 - **November 2025:** Published our first impact report
 
 ---

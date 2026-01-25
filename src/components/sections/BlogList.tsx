@@ -56,12 +56,12 @@ const BlogList: React.FC = () => {
         paddingBottom: 0,
       }}
     >
-      <div className="max-w-3xl mx-auto" style={{marginBottom: 0, paddingBottom: 0}}>
+      <div className="max-w-3xl mx-auto pb-6" style={{marginBottom: 0, paddingBottom: '1.5rem', background: 'linear-gradient(135deg, #0B0F39 80%, #00E5CC11 100%)', borderBottomLeftRadius: '2rem', borderBottomRightRadius: '2rem'}}>
         {posts.map((post, idx) => (
           <div
             key={post.file}
             className={
-              `border-2 border-[#00E5CC] rounded-2xl bg-opacity-90 shadow-xl transition-all duration-200${idx !== posts.length - 1 ? ' mb-6' : ''}`
+              `border-2 border-[#00E5CC] rounded-2xl bg-opacity-90 shadow-xl transition-all duration-200${idx !== posts.length - 1 ? ' mb-6' : ' mb-6'}`
             }
             style={{
               background: openIndex === idx ? 'rgba(16,25,74,0.98)' : 'rgba(24,34,90,0.96)',
