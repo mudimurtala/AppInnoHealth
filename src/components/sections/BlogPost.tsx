@@ -26,11 +26,26 @@ const BlogPost: React.FC<BlogPostProps> = ({ file, author, date }) => {
         borderRadius: '2rem',
       }}
     >
+      {/* Mobile-only styles for blog heading */}
+      <style>{`
+        @media (max-width: 639px) {
+          .blog-post-heading {
+            font-size: 1.4rem !important;
+            text-align: left !important;
+          }
+          .blog-post-subheading-h2 {
+            font-size: 1.15rem !important;
+          }
+          .blog-post-subheading-h3 {
+            font-size: 1rem !important;
+          }
+        }
+      `}</style>
       <ReactMarkdown
         components={{
-          h1: ({node, ...props}) => <h1 style={{ color: '#00E5CC', fontFamily: 'Comfortaa, cursive', fontWeight: 700, fontSize: '2.2rem', marginBottom: '1.2rem', textAlign: 'center' }} {...props} />,
-          h2: ({node, ...props}) => <h2 style={{ color: '#3C73FF', fontFamily: 'Comfortaa, cursive', fontWeight: 600, fontSize: '1.5rem', marginBottom: '1rem', marginTop: '2rem' }} {...props} />,
-          h3: ({node, ...props}) => <h3 style={{ color: '#00E5CC', fontFamily: 'Comfortaa, cursive', fontWeight: 600, fontSize: '1.2rem', marginBottom: '0.8rem', marginTop: '1.5rem' }} {...props} />,
+          h1: ({node, ...props}) => <h1 className="blog-post-heading" style={{ color: '#00E5CC', fontFamily: 'Comfortaa, cursive', fontWeight: 700, fontSize: '2.2rem', marginBottom: '1.2rem', textAlign: 'center' }} {...props} />,
+          h2: ({node, ...props}) => <h2 className="blog-post-subheading-h2" style={{ color: '#3C73FF', fontFamily: 'Comfortaa, cursive', fontWeight: 600, fontSize: '1.5rem', marginBottom: '1rem', marginTop: '2rem' }} {...props} />,
+          h3: ({node, ...props}) => <h3 className="blog-post-subheading-h3" style={{ color: '#00E5CC', fontFamily: 'Comfortaa, cursive', fontWeight: 600, fontSize: '1.2rem', marginBottom: '0.8rem', marginTop: '1.5rem' }} {...props} />,
           p: ({node, ...props}) => <p style={{ marginBottom: '1.1rem', fontSize: '1.05rem', lineHeight: '1.7', color: '#fff' }} {...props} />,
           ul: ({node, ...props}) => <ul style={{ marginBottom: '1.1rem', paddingLeft: '1.5rem', color: '#fff' }} {...props} />,
           li: ({node, ...props}) => <li style={{ marginBottom: '0.5rem', fontSize: '1.05rem', lineHeight: '1.7' }} {...props} />,
