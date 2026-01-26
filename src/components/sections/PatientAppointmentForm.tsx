@@ -22,7 +22,7 @@ const PatientAppointmentForm: React.FC<PatientAppointmentFormProps> = ({ onSucce
         if (!form) return;
         const data = new FormData(form);
         try {
-          const res = await fetch('https://formspree.io/f/xjgbypoo?email=admin@innohealth.tech', {
+          const res = await fetch('https://formspree.io/f/meegakzy?email=admin@innohealth.tech', {
             method: 'POST',
             body: data,
             headers: {
