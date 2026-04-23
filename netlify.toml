@@ -1,6 +1,7 @@
+# Netlify deployment configuration
 [build]
-  command = "npm run build"
-  publish = "build"
+  command = "npm run build"  # runs Vite production build
+  publish = "build"          # publishes Vite output folder
 
 [build.environment]
-  NODE_VERSION = "20"
+  NODE_VERSION = "20"        # pinned for reproducible builds across environments
