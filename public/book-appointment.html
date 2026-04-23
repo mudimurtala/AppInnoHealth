@@ -1,10 +1,17 @@
 <!DOCTYPE html>
+<!--
+  Static fallback appointment booking form for InnoHealth Africa Technology.
+  Used as an alternative when JavaScript is disabled or as a backup route.
+  Styled to match the main React app's design system (Poppins font, brand colors, gradients).
+  Form submissions are sent to Formspree endpoint for email delivery to admin@innohealth.tech
+-->
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Book Appointment</title>
   <style>
+    /* Page layout: centered gradient background matching main app theme */
     body {
       font-family: 'Poppins', Arial, sans-serif;
       background: linear-gradient(135deg, #E8F0FF 0%, #F5F8FF 25%, #FFFFFF 50%, #FAFCFF 75%, #F0F6FF 100%);
@@ -15,6 +22,8 @@
       align-items: center;
       justify-content: center;
     }
+    
+    /* Form card styling with subtle shadow */
     form {
       background: #fff;
       border-radius: 18px;
@@ -26,12 +35,16 @@
       flex-direction: column;
       gap: 1.1rem;
     }
+    
+    /* Form title in brand primary color */
     h2 {
       color: #1D32F2;
       text-align: center;
       margin-bottom: 1.2rem;
       font-family: 'Comfortaa', cursive;
     }
+    
+    /* Form field labels with proper spacing */
     label {
       display: flex;
       flex-direction: column;
@@ -39,6 +52,8 @@
       color: #0B0F39;
       gap: 0.3rem;
     }
+    
+    /* Input fields with brand color accents */
     input, select, textarea {
       border: 1px solid #B5CCFF;
       border-radius: 8px;
@@ -49,11 +64,15 @@
       color: #0B0F39;
       margin-top: 0.2rem;
     }
+    
+    /* Checkbox styling */
     input[type="checkbox"] {
       width: auto;
       margin-right: 0.5rem;
       accent-color: #1D32F2;
     }
+    
+    /* Submit button with gradient and hover effect */
     button[type="submit"] {
       background: linear-gradient(90deg, #1D32F2 0%, #3C73FF 100%);
       color: #fff;
@@ -66,12 +85,14 @@
       margin-top: 0.5rem;
       transition: background 0.2s;
     }
+    
     button[type="submit"]:hover {
       background: linear-gradient(90deg, #3C73FF 0%, #1D32F2 100%);
     }
   </style>
 </head>
 <body>
+<!-- Static form submitting to Formspree for backend email handling -->
 <form action="https://formspree.io/f/meegakzy?email=admin@innohealth.tech" method="POST">
   <h2>Book an Appointment</h2>
   <label>
