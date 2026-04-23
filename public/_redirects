@@ -1,1 +1,3 @@
+# SPA fallback: routes all traffic to index.html so React Router handles client-side routing
+# without 404 errors on refresh (essential for /blog and other deep links in production)
 /* /index.html 200
