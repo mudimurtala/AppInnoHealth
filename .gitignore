@@ -32,3 +32,6 @@ coverage/
 # Windows ADS metadata that may appear in this workspace
 *:Zone.Identifier
 **/*:Zone.Identifier
+
+# Other Materials
+materials
