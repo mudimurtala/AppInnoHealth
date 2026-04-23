@@ -46,15 +46,15 @@
         '@radix-ui/react-aspect-ratio@1.1.2': '@radix-ui/react-aspect-ratio',
         '@radix-ui/react-alert-dialog@1.1.6': '@radix-ui/react-alert-dialog',
         '@radix-ui/react-accordion@1.2.3': '@radix-ui/react-accordion',
-        '@': path.resolve(__dirname, './src'),
+        '@': path.resolve(__dirname, './src'), // shorthand for absolute imports from src folder
       },
     },
     build: {
-      target: 'esnext',
-      outDir: 'build',
+      target: 'esnext', // target modern browsers for better performance
+      outDir: 'build', // Netlify publish directory matches this output folder
     },
     server: {
       port: 3000,
-      open: true,
+      open: true, // automatically opens browser on dev server start
     },
   });
