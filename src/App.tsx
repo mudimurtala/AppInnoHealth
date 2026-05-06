@@ -1,8 +1,3 @@
-// Main App Component - Clean and Simple!
-// All sections are now separate components in /components/sections/
-
-
-
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {
