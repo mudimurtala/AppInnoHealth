@@ -9,5 +9,7 @@ export { default as Partnerships } from './Partnerships';
 export { default as Footer } from './Footer';
 export { default as BlogList } from './BlogList';
 export { default as FloatingBlogButton } from './FloatingBlogButton';
+export { default as WebinarAnnouncementBar } from './WebinarAnnouncementBar';
+export { default as WebinarLandingPage } from './WebinarLandingPage';
 
 export { default as TeamCarousel } from './TeamCarousel';
