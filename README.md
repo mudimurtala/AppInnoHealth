@@ -19,13 +19,13 @@ InnoHealth Africa Technology Ltd is a registered social enterprise in Nigeria, f
 - **Branded Design System:** Centralized design tokens (colors, fonts, spacing, shadows) for visual consistency across all components.
 - **Optimized Performance:** Strategic preloading of critical assets, SPA route handling, and minimal re-renders.
 - **Animated, Interactive Sections:** Framer Motion for smooth hero slides and card interactions; CSS keyframes for lightweight effects.
-- **Form Submission Pipeline:** Robust form handling with async validation and Formspree backend integration for email delivery.
+- **Form Submission Pipeline:** Form handling with async validation and Formspree backend integration for email delivery.
 - **About Us Modal:** Organized modal with clear sections, values, vision, and mission—accessible from any page.
 - **Team Carousel:** Responsive, interactive carousel showcasing team members with smooth horizontal scroll.
 - **Fixed Navigation Bar:** Context-aware navigation with scroll detection and modal triggers for seamless UX.
 - **Mobile/Desktop Optimization:** Carefully tailored layouts and interactions ensure polished experience across all device sizes.
 - **Production Deployment:** Netlify-ready with SPA fallback redirects, ensuring deep-link refresh stability in production.
-- **Clean, Maintainable Code:** Organized component structure, meaningful comments, and zero Figma/Windows artifacts.
+- **Clean, Maintainable Code:** Organized component structure and meaningful comments.
 
 ## 🗂️ Project Structure
 
