@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  useLocation,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {
   Navbar,
   HeroSection,
@@ -16,19 +11,11 @@ import {
   Footer,
   BlogList,
   FloatingBlogButton,
-  WebinarAnnouncementBar,
-  WebinarLandingPage,
 } from "./components/sections";
 
 function AppContent() {
-  const location = useLocation();
-
-  // hide the announcement bar on the dedicated webinar page
-  const showAnnouncement = location.pathname !== "/webinar";
-
   return (
     <>
-      {showAnnouncement && <WebinarAnnouncementBar />}
       <FloatingBlogButton />
       <div className="w-full pt-16">
         <Navbar />
@@ -47,7 +34,6 @@ function AppContent() {
             }
           />
           <Route path="/blog" element={<BlogList />} />
-          <Route path="/webinar" element={<WebinarLandingPage />} />
         </Routes>
         <Footer />
       </div>
