@@ -1,4 +1,3 @@
-// A minimal country list for demonstration. You can expand this as needed.
 export const countries = [
   "Nigeria",
   "Ghana",
