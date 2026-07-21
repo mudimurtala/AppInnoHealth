@@ -1,5 +1,6 @@
 import { createRoot } from "react-dom/client";
 import App from "./App.tsx";
+import { useEffect } from "react";
 import "./index.css";
 
 // Show loading spinner for minimum 3.5 seconds for better UX
@@ -31,3 +32,16 @@ setTimeout(() => {
     });
   });
 }, remainingTime);  
+
+export function Sabilytics() {
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.async = true;
+    script.src = "https://sabilytics.vercel.app/script.js";
+    script.setAttribute("data-site", "8sj835pw3yxz");
+    script.setAttribute("data-domain", "innohealth.tech");
+    document.head.appendChild(script);
+  }, []);
+
+  return null;
+}
