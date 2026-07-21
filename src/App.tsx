@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Sabilytics } from "./components/sections/Sabilytics";
 import {
   Navbar,
   HeroSection,
@@ -16,6 +17,7 @@ import {
 function AppContent() {
   return (
     <>
+      <Sabilytics />
       <FloatingBlogButton />
       <div className="w-full pt-16">
         <Navbar />
